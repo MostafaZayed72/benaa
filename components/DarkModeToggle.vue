@@ -4,9 +4,10 @@
       @click="toggleDarkMode"
       class="p-2 rounded focus:outline-none"
     >
-      <!-- عرض الأيقونة فقط إذا تم تحميل الحالة -->
-      <Icon v-if="loaded && isDarkMode" name="material-symbols:clear-day-rounded" class="text-2xl mt-1 text-white" />
-      <Icon v-if="loaded && !isDarkMode" name="ri:moon-line" class="text-2xl mt-3 text-white" />
+      <!-- التأكد من عرض الأيقونة الصحيحة عند تحميل الصفحة -->
+      <Icon v-if="!isDarkMode" name="ri:moon-line" class="text-2xl mt-3 text-white" />
+
+      <Icon v-else name="material-symbols:clear-day-rounded" class="text-2xl mt-1 text-white" />
     </button>
   </div>
 </template>
@@ -15,7 +16,6 @@
 import { ref, onMounted, watch } from 'vue'
 
 const isDarkMode = ref(false)
-const loaded = ref(false) // متغير لتتبع تحميل الحالة من localStorage
 
 // استعادة حالة الوضع من التخزين المحلي عند تحميل الصفحة
 onMounted(() => {
@@ -23,8 +23,8 @@ onMounted(() => {
   if (savedColorMode) {
     isDarkMode.value = savedColorMode === 'dark'
   }
+  // ضبط الوضع الليلي إذا كان محجوزًا في التخزين
   document.body.classList.toggle('dark', isDarkMode.value)
-  loaded.value = true // تعيين حالة التحميل إلى true
 })
 
 // مراقبة حالة الوضع لضمان تحديث الأيقونة عند التبديل
