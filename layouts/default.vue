@@ -87,13 +87,11 @@
           <NuxtLink 
             :class="['hover:bg-cyan-700 px-4 py-2 rounded-lg delayed cursor-pointer font-bold  hover:text-yellow-400', 
                      { 'bg-cyan-700 text-yellow-400': isYourNurseActive }]" 
-            to="/yourNurse"
           >
             {{ $t('Services') }}
           </NuxtLink>
           <NuxtLink 
             class="hover:bg-cyan-700 px-4 py-2 rounded-lg delayed cursor-pointer font-bold  hover:text-yellow-400" 
-            to="/contact" 
             active-class="bg-cyan-700 text-yellow-400" 
             exact-active-class="bg-cyan-700 text-yellow-400"
           >
@@ -101,28 +99,7 @@
 
           </NuxtLink>
 
-          <!-- Dropdown للحساب الجديد في الشاشات الصغيرة -->
-          <div class="relative">
-            <button 
-              @click="toggleDropdown" 
-              :class="['hover:bg-cyan-700 px-4 py-2 rounded-lg delayed cursor-pointer font-bold  hover:text-yellow-400', 
-                      { 'bg-cyan-700 text-yellow-400': isSignupSectionActive }]"
-            >
-              {{ $t('New account') }}
-            </button>
-            <div v-if="isDropdownOpen" class="bg-transparent shadow-lg rounded mt-2 w-fit p-2 z-10 flex flex-col gap-2">
-              <NuxtLink 
-                to="/nurses/signup"
-              >
-                سجل كممرض
-              </NuxtLink>
-              <NuxtLink 
-                to="/users/signup"
-              >
-                سجل كمستخدم عادي
-              </NuxtLink>
-            </div>
-          </div>
+          
         </div>
       </div>
     </transition>

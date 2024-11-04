@@ -9,9 +9,9 @@
             <h1 class="text-8xl text-white mt-2">منصة بناء</h1>
         </div>
         
-        <div class="hidden sm:flex absolute bottom-4 left-4 flex-col items-center text-white px-16 py-2" style="border: 1px solid white">
-            <Icon name="fa6-solid:headphones" class="text-5xl"/>
-            <h1 class="mt-2 text-3xl">الدعم الفني</h1>
+        <div class="hidden sm:flex absolute bottom-4 left-4 flex-col items-center text-white px-10 py-2" style="border: 1px solid white">
+            <Icon name="fa6-solid:headphones" class="text-4xl"/>
+            <h1 class="mt-2 text-2xl">الدعم الفني</h1>
         </div>
 
         <!-- شعار المنصة وقسم الدعم الفني للشاشات الصغيرة -->
@@ -19,7 +19,7 @@
             <img src="/public/imgs/logo.png" alt="Logo" class="w-[70%] mx-auto">
             <h1 class="text-4xl text-white mt-2">منصة بناء</h1>
 
-            <div class="flex flex-col items-center text-white mt-4 border border-white px-6 py-2 w-[50%] mx-auto md:w-full md:mx-0">
+            <div class="flex flex-col items-center text-white mt-4 border border-white px-2 py-2 w-[50%] mx-auto md:w-[10%] md:mx-0">
                 <Icon name="fa6-solid:headphones" class="text-2xl"/>
                 <h1 class="mt-2 text-xl">الدعم الفني</h1>
             </div>
