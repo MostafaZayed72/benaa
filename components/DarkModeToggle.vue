@@ -37,7 +37,6 @@ const toggleDarkMode = () => {
 <style >
 /* إعدادات اللون عند التبديل بين الوضعين */
 body {
-  background-color: blue;
   transition: background-color 0.3s, color 0.3s; /* إضافة تأثير انتقال سلس */
 }
 
@@ -49,7 +48,7 @@ body.dark {
 
 /* إعداد اللون للخلفية والنصوص في الوضع النهاري */
 body {
-  background-color: #ffffff; /* لون خلفية الوضع النهاري */
+  background-color: blue;
   color: black; /* لون النص في الوضع النهاري */
 }
 
