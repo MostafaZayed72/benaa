@@ -57,7 +57,7 @@
           active-class="bg-cyan-700 text-yellow-400" 
           exact-active-class="bg-cyan-700 text-yellow-400"
         >
-{{$t('Contact us')}}
+{{$t('Sign up')}}
         </NuxtLink>
         <NuxtLink 
           class="hover:bg-cyan-700 px-4 py-2 rounded-lg delayed cursor-pointer font-bold  hover:text-yellow-400 bg-white text-black" 
@@ -65,7 +65,7 @@
           active-class="bg-cyan-700 text-yellow-400" 
           exact-active-class="bg-cyan-700 text-yellow-400"
         >
-{{$t('Contact us')}}
+{{$t('Login')}}
         </NuxtLink>
       </div>
       </div>
