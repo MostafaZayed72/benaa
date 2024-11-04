@@ -4,14 +4,15 @@
       @click="toggleDarkMode"
       class="p-2 rounded focus:outline-none"
     >
-      <i v-if="isDarkMode" class="text-2xl mt-1 text-white ri-sun-fill"></i> <!-- أيقونة الشمس -->
-      <i v-else class="text-2xl mt-3 text-white ri-moon-line"></i> <!-- أيقونة القمر -->
+      <i v-if="isDarkMode" class="fas fa-sun text-2xl mt-1 text-white"></i> <!-- أيقونة الشمس -->
+      <i v-else class="fas fa-moon text-2xl mt-3 text-white"></i> <!-- أيقونة القمر -->
     </button>
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue'
+import '@fortawesome/fontawesome-free/css/all.css';
 
 const isDarkMode = ref(false)
 
