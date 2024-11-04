@@ -35,10 +35,6 @@ const toggleDarkMode = () => {
 </script>
 
 <style >
-/* إعدادات اللون عند التبديل بين الوضعين */
-body {
-  transition: background-color 0.3s, color 0.3s; /* إضافة تأثير انتقال سلس */
-}
 
 /* إعداد اللون للخلفية والنصوص عند تفعيل الوضع الليلي */
 body.dark {
@@ -48,8 +44,9 @@ body.dark {
 
 /* إعداد اللون للخلفية والنصوص في الوضع النهاري */
 body {
-  background-color: blue;
+  background-color: #ffffff; /* لون خلفية الوضع النهاري */
   color: black; /* لون النص في الوضع النهاري */
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .Menubar .dark{
