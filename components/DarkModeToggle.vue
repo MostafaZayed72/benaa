@@ -1,57 +1,58 @@
 <template>
   <div>
-    <button @click="toggleDarkMode" class="p-2 rounded focus:outline-none">
-      <!-- التأكد من عرض الأيقونة الصحيحة عند تحميل الصفحة -->
-      <span v-if="!isDarkMode">
-        <Icon name="ri:moon-line" class="text-2xl mt-3 text-white" />
-      </span>
-      <span v-else>
-        <Icon name="material-symbols:clear-day-rounded" class="text-2xl mt-1 text-white" />
-      </span>
+    <button
+      @click="toggleDarkMode"
+      class="p-2 rounded focus:outline-none"
+    
+    >
+     <Icon v-if="isDarkMode" name="line-md:sun-rising-filled-loop" class="text-2xl mt-1 text-white"/>
+     <Icon name="ri:moon-line" v-else class="text-2xl mt-3 text-white"/>
     </button>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted, watch } from 'vue'
+import { ref, onMounted } from 'vue'
 
 const isDarkMode = ref(false)
 
 // استعادة حالة الوضع من التخزين المحلي عند تحميل الصفحة
 onMounted(() => {
   const savedColorMode = localStorage.getItem('colorMode')
-  if (savedColorMode) {
+  if (savedColorMode === 'dark' || savedColorMode === 'light') {
     isDarkMode.value = savedColorMode === 'dark'
+    document.body.classList.toggle('dark', isDarkMode.value)
   }
-  // ضبط الوضع الليلي إذا كان محجوزًا في التخزين
-  document.body.classList.toggle('dark', isDarkMode.value)
-})
-
-// مراقبة حالة الوضع لضمان تحديث الأيقونة عند التبديل
-watch(isDarkMode, (newValue) => {
-  document.body.classList.toggle('dark', newValue)
-  localStorage.setItem('colorMode', newValue ? 'dark' : 'light')
 })
 
 // دالة لتبديل الوضع الليلي والنهاري
 const toggleDarkMode = () => {
   isDarkMode.value = !isDarkMode.value
+  document.body.classList.toggle('dark', isDarkMode.value)
+  // حفظ حالة الوضع في التخزين المحلي
+  localStorage.setItem('colorMode', isDarkMode.value ? 'dark' : 'light')
 }
 </script>
 
-<style scoped>
+<style >
 /* إعدادات اللون عند التبديل بين الوضعين */
 body {
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s; /* إضافة تأثير انتقال سلس */
 }
 
+/* إعداد اللون للخلفية والنصوص عند تفعيل الوضع الليلي */
 body.dark {
-  background-color: #1e1e1e;
-  color: white;
+  background-color: #1e1e1e; /* لون خلفية الوضع الليلي */
+  color: white; /* لون النص في الوضع الليلي */
 }
 
+/* إعداد اللون للخلفية والنصوص في الوضع النهاري */
 body {
-  background-color: #ffffff;
-  color: black;
+  background-color: #ffffff; /* لون خلفية الوضع النهاري */
+  color: black; /* لون النص في الوضع النهاري */
+}
+
+.Menubar .dark{
+  background-color: #1e1e1e; 
 }
 </style>
