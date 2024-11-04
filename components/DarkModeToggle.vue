@@ -3,9 +3,9 @@
     <button
       @click="toggleDarkMode"
       class="p-2 rounded focus:outline-none"
-    
     >
-     <Icon name="ri:moon-line"  class="text-2xl mt-3 text-white"/>
+      <i v-if="isDarkMode" class="text-2xl mt-1 text-white ri-sun-fill"></i> <!-- أيقونة الشمس -->
+      <i v-else class="text-2xl mt-3 text-white ri-moon-line"></i> <!-- أيقونة القمر -->
     </button>
   </div>
 </template>
@@ -33,7 +33,7 @@ const toggleDarkMode = () => {
 }
 </script>
 
-<style >
+<style>
 /* إعدادات اللون عند التبديل بين الوضعين */
 body {
   transition: background-color 0.3s, color 0.3s; /* إضافة تأثير انتقال سلس */
@@ -51,7 +51,7 @@ body {
   color: black; /* لون النص في الوضع النهاري */
 }
 
-.Menubar .dark{
+.Menubar .dark {
   background-color: #1e1e1e; 
 }
 </style>
