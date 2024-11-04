@@ -1,13 +1,13 @@
 <template>
   <div>
-    <h1
+    <button
       @click="toggleDarkMode"
-      class="p-2 rounded focus:outline-none cursor-pointer"
+      class="p-2 rounded focus:outline-none"
     
     >
      <Icon v-if="isDarkMode" name="line-md:sun-rising-filled-loop" class="text-2xl mt-1 text-yellow-400"/>
      <Icon name="ri:moon-line" v-else class="text-2xl mt-3 text-white"/>
-  </h1>
+    </button>
   </div>
 </template>
 
@@ -37,6 +37,7 @@ const toggleDarkMode = () => {
 <style >
 /* إعدادات اللون عند التبديل بين الوضعين */
 body {
+  background-color: blue;
   transition: background-color 0.3s, color 0.3s; /* إضافة تأثير انتقال سلس */
 }
 
