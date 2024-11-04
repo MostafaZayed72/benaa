@@ -5,11 +5,8 @@
       class="p-2 rounded focus:outline-none"
     
     >
-     <!-- <Icon :name="isDarkMode ? 'line-md:sun-rising-filled-loop': 'ri:moon-line'" class="text-2xl mt-1 text-white"/> -->
-     <span v-if="isDarkMode">🌙</span>
-     <span v-else>🌙</span>
-     
-     
+     <Icon v-if="isDarkMode" name="ri:moon-line" class="text-2xl mt-1 text-yellow-400"/>
+     <Icon name="ri:moon-line" v-else class="text-2xl mt-3 text-white"/>
     </button>
   </div>
 </template>
@@ -38,6 +35,10 @@ const toggleDarkMode = () => {
 </script>
 
 <style >
+/* إعدادات اللون عند التبديل بين الوضعين */
+body {
+  transition: background-color 0.3s, color 0.3s; /* إضافة تأثير انتقال سلس */
+}
 
 /* إعداد اللون للخلفية والنصوص عند تفعيل الوضع الليلي */
 body.dark {
@@ -49,7 +50,6 @@ body.dark {
 body {
   background-color: #ffffff; /* لون خلفية الوضع النهاري */
   color: black; /* لون النص في الوضع النهاري */
-  transition: background-color 0.3s, color 0.3s;
 }
 
 .Menubar .dark{
