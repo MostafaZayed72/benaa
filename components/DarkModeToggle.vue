@@ -1,13 +1,13 @@
 <template>
   <div>
-    <button
-      @click="toggleDarkMode"
-      class="p-2 rounded focus:outline-none"
-    >
+    <button @click="toggleDarkMode" class="p-2 rounded focus:outline-none">
       <!-- التأكد من عرض الأيقونة الصحيحة عند تحميل الصفحة -->
-      <Icon v-if="!isDarkMode" name="ri:moon-line" class="text-2xl mt-3 text-white" />
-
-      <Icon v-else name="material-symbols:clear-day-rounded" class="text-2xl mt-1 text-white" />
+      <span v-if="!isDarkMode">
+        <Icon name="ri:moon-line" class="text-2xl mt-3 text-white" />
+      </span>
+      <span v-else>
+        <Icon name="material-symbols:clear-day-rounded" class="text-2xl mt-1 text-white" />
+      </span>
     </button>
   </div>
 </template>
