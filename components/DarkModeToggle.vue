@@ -5,7 +5,7 @@
       class="p-2 rounded focus:outline-none"
     
     >
-     <Icon v-if="isDarkMode" name="ri:moon-line" class="text-2xl mt-1 text-yellow-400"/>
+     <Icon v-if="isDarkMode" name="tabler:sun-filled" class="text-2xl mt-1 text-yellow-400"/>
      <Icon name="ri:moon-line" v-else class="text-2xl mt-3 text-white"/>
     </button>
   </div>
