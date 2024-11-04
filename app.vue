@@ -36,7 +36,7 @@ if (!preferredLanguage.value) {
     transition: 0.3s ;
 }
 body {
-  font-family: Harmattan       , sans-serif;
+  font-family: Tajawal       , sans-serif;
   font-weight: 500;
 }
 .v-data-table{
