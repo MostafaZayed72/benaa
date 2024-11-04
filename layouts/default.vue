@@ -106,7 +106,7 @@
     
     <Loader v-if="loading" />
     <main class="px-0 mt-0">
-      <slot @slot-loaded="loading = false" />
+      <slot />
     </main>
   </div>
 </template>
@@ -115,7 +115,7 @@
 import { ref, onMounted, onBeforeUnmount, computed } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 const { locale } = useI18n();
-const loading = ref(true);
+const loading = ref(false);
 const router = useRouter();
 const isScrolled = ref(false);
 
@@ -308,10 +308,4 @@ body.dark {
   cursor: pointer;
 }
 
-
-
 </style>
-
-
-
-

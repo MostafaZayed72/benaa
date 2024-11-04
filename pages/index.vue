@@ -1,8 +1,7 @@
 <template>
     <div class="relative w-full mt-28 md:mt-0">
         <!-- الفيديو -->
-        <video src="/public/video.mp4" class="w-full" autoplay loop muted playsinline></video>
-        
+        <img src="/public/imgs/logo.png" alt="Logo" class="w-[50%] mx-auto">        
         <!-- شعار المنصة وقسم الدعم الفني للشاشات الكبيرة -->
         <div class="hidden sm:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
             <img src="/public/imgs/logo.png" alt="Logo" class="w-[50%] mx-auto">
