@@ -1,7 +1,7 @@
 <template>
     <div class="relative w-full mt-28 md:mt-0">
         <!-- الفيديو -->
-        <video v-if="showVideo" src="/public/video.mp4" class="w-full" autoplay loop muted playsinline></video>
+        <video src="/public/video.mp4" class="w-full" autoplay loop muted playsinline></video>
         
         <!-- شعار المنصة وقسم الدعم الفني للشاشات الكبيرة -->
         <div class="hidden sm:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
@@ -26,16 +26,3 @@
         </div>
     </div>
 </template>
-
-<script setup>
-import { ref, onMounted } from 'vue';
-
-const showVideo = ref(false);
-
-onMounted(() => {
-    // تأخير ظهور الفيديو 3 ثواني
-    setTimeout(() => {
-        showVideo.value = true;
-    }, 3000); // 3000 مللي ثانية = 3 ثواني
-});
-</script>
