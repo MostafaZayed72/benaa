@@ -6,7 +6,7 @@
     
     >
      <Icon v-if="isDarkMode" name="line-md:sun-rising-filled-loop" class="text-2xl mt-1 text-yellow-400"/>
-      <span v-else>🌙</span>
+      <span  v-else >🌙</span>
     </button>
   </div>
 </template>
@@ -17,7 +17,7 @@ import { ref, onMounted } from 'vue'
 const isDarkMode = ref(false)
 
 // استعادة حالة الوضع من التخزين المحلي عند تحميل الصفحة
-onMounted(() => {
+onBeforeMount(() => {
   const savedColorMode = localStorage.getItem('colorMode')
   if (savedColorMode === 'dark' || savedColorMode === 'light') {
     isDarkMode.value = savedColorMode === 'dark'
