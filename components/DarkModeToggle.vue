@@ -5,7 +5,10 @@
       class="p-2 rounded focus:outline-none"
     
     >
-     <Icon :name="isDarkMode ? 'line-md:sun-rising-filled-loop': 'ri:moon-line'" class="text-2xl mt-1 text-white"/>
+     <!-- <Icon :name="isDarkMode ? 'line-md:sun-rising-filled-loop': 'ri:moon-line'" class="text-2xl mt-1 text-white"/> -->
+     <span v-if="isDarkMode">🌙</span>
+     <span v-else>🌙</span>
+     
      
     </button>
   </div>
