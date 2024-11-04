@@ -5,7 +5,8 @@
       class="p-2 rounded focus:outline-none"
     
     >
-     <h1 class="text-green-900">change</h1>
+     <Icon :name="isDarkMode ? 'line-md:sun-rising-filled-loop': 'ri:moon-line'" class="text-2xl mt-1 text-white"/>
+     
     </button>
   </div>
 </template>
