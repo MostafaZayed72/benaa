@@ -62,7 +62,7 @@
 
     <!-- Burger Menu Transition for Small Screens -->
     <transition name="slide">
-      <div v-if="isSidebarOpen" class="bg-sky-700 md:hidden border-t-2 border-cyan-600">
+      <div v-if="isSidebarOpen" class="bg-sky-700 md:hidden border-t-2 border-sky-600">
         <div class="flex flex-col p-4">
           <NuxtLink
             class="hover:bg-sky-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
