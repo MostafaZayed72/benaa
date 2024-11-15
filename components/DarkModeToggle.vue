@@ -5,7 +5,7 @@
       class="p-2 rounded focus:outline-none"
     >
       <i v-if="isDarkMode" class="fas fa-sun text-2xl mt-1 text-white"></i> 
-      <i v-else class="fas fa-moon text-2xl mt-3 text-white"></i> 
+      <i v-else class="fas fa-moon text-2xl mt-2 text-white"></i> 
     </button>
   </div>
 </template>
