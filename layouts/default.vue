@@ -1,73 +1,62 @@
 <template>
   <div :class="{ 'dark': isDarkMode }" :style="{ direction: locale === 'ar-AR' ? 'rtl' : 'ltr' }">
-    <div  class="mb-0 px-20  flex justify-between items-center py-6  sticky top-0 z-10 navbar"
-    >
-    <div class="flex items-center gap-4 md:hidden">
-        <Icon
-          @click="toggleSidebar"
-          name="iconamoon:menu-burger-horizontal"
-          class=" text-xl text-white cursor-pointer"
-        />
+    <div class="mb-0 px-4 bg-sky-700 flex justify-between items-center py-2 shadow-xl sticky top-0 z-10 ">
+      <div class="flex items-center gap-4">
+        <Icon @click="toggleSidebar" name="iconamoon:menu-burger-horizontal"
+          class="md:hidden text-xl text-white cursor-pointer" />
+        <img src="/public/imgs/logo.png" class="w-16 h-16 cursor-pointer" alt="" style="border-radius: 50%;"
+          @click="navigateTo('/')">
       </div>
 
       <!-- الروابط في الشاشات الكبيرة -->
       <div class="links md:flex items-center gap-4 hidden">
-        <NuxtLink 
-          class="hover:bg-cyan-700 px-4 py-2 rounded-lg delayed cursor-pointer font-bold  hover:text-yellow-400 bg-white text-black" 
-          to="/" 
-          active-class="bg-cyan-700 text-yellow-400" 
-          exact-active-class="bg-cyan-700 text-yellow-400"
-        >
+        <NuxtLink
+          class="hover:bg-sky-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
+          to="/" active-class="bg-sky-500 text-yellow-400" exact-active-class="bg-sky-500 text-yellow-400">
           {{ $t('Home') }}
         </NuxtLink>
-      
-        <NuxtLink 
-          class="hover:bg-cyan-700 px-4 py-2 rounded-lg delayed cursor-pointer font-bold  hover:text-yellow-400  bg-white text-black" 
-          
-        >
-        {{ $t('Services') }}
-      </NuxtLink>
-        <NuxtLink 
-          class="hover:bg-cyan-700 px-4 py-2 rounded-lg delayed cursor-pointer font-bold  hover:text-yellow-400 bg-white text-black" 
-          
-          active-class="bg-cyan-700 text-yellow-400" 
-          exact-active-class="bg-cyan-700 text-yellow-400"
-        >
-{{$t('About us')}}
+        <NuxtLink v-if="!token"
+          class="hover:bg-sky-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
+          to="" active-class="bg-sky-500 text-yellow-400" exact-active-class="bg-sky-500 text-yellow-400">
+          {{ $t('Login') }}
         </NuxtLink>
-        <NuxtLink 
-          class="hover:bg-cyan-700 px-4 py-2 rounded-lg delayed cursor-pointer font-bold  hover:text-yellow-400 bg-white text-black" 
-          
-          active-class="bg-cyan-700 text-yellow-400" 
-          exact-active-class="bg-cyan-700 text-yellow-400"
-        >
-{{$t('Contact us')}}
+        <!-- <NuxtLink
+          class="hover:bg-sky-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
+          :to="`/yourNurse/${userID}`"  active-class="bg-sky-500 text-yellow-400" exact-active-class="bg-sky-500 text-yellow-400">
+          {{ $t('My profile') }}
+        </NuxtLink> -->
+        <NuxtLink
+          class="hover:bg-sky-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
+          to="" active-class="bg-sky-500 text-yellow-400"
+          exact-active-class="bg-sky-500 text-yellow-400">
+          {{ $t('Notifications') }}
         </NuxtLink>
+        <NuxtLink :class="['hover:bg-sky-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400',
+          ]" active-class="bg-sky-500 text-yellow-400" exact-active-class="bg-sky-500 text-yellow-400" to="" >
+          {{ $t('Products') }}
+        </NuxtLink>
+        <NuxtLink
+          class="hover:bg-sky-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
+          to="" active-class="bg-sky-500 text-yellow-400" exact-active-class="bg-sky-500 text-yellow-400">
+          {{ $t('My commissions') }}
+        </NuxtLink>
+       
+        <NuxtLink
+          class="hover:bg-sky-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
+          to="" active-class="bg-sky-500 text-yellow-400" exact-active-class="bg-sky-500 text-yellow-400">
+          {{ $t('Article') }}
+        </NuxtLink>
+       
+        
 
-      
+       
       </div>
-      <div class="flex items-center ">
+      <div class="flex items-center gap-2">
+        
+        <Icon class="text-3xl cursor-pointer text-cyan-700 hidden md:flex" name="ic:twotone-log-out" v-if="token" @click="logout" />
         <LanguageSwitcher />
 
-      <DarkModeToggle />
-      <div class="flex gap-8 mx-4">
-        <NuxtLink 
-          class="hover:bg-cyan-700 px-4 py-2 rounded-lg delayed cursor-pointer font-bold  hover:text-yellow-400 bg-white text-black" 
-          
-          active-class="bg-cyan-700 text-yellow-400" 
-          exact-active-class="bg-cyan-700 text-yellow-400"
-        >
-{{$t('Sign up')}}
-        </NuxtLink>
-        <NuxtLink 
-          class="hover:bg-cyan-700 px-4 py-2 rounded-lg delayed cursor-pointer font-bold  hover:text-yellow-400 bg-white text-black" 
-          
-          active-class="bg-cyan-700 text-yellow-400" 
-          exact-active-class="bg-cyan-700 text-yellow-400"
-        >
-{{$t('Login')}}
-        </NuxtLink>
-      </div>
+        <DarkModeToggle />
       </div>
     </div>
 
@@ -75,61 +64,124 @@
     <transition name="slide">
       <div v-if="isSidebarOpen" class="bg-cyan-500 md:hidden border-t-2 border-cyan-600">
         <div class="flex flex-col p-4">
-          <NuxtLink 
-            class="hover:bg-cyan-700 px-4 py-2 rounded-lg delayed cursor-pointer font-bold  hover:text-yellow-400" 
-            to="/" 
-            active-class="bg-cyan-700 text-yellow-400" 
-            exact-active-class="bg-cyan-700 text-yellow-400"
-          >
+          <NuxtLink
+            class="hover:bg-sky-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
+            to="/" active-class="bg-sky-500 text-yellow-400" exact-active-class="bg-sky-500 text-yellow-400">
             {{ $t('Home') }}
           </NuxtLink>
-          
-          <NuxtLink 
-            :class="['hover:bg-cyan-700 px-4 py-2 rounded-lg delayed cursor-pointer font-bold  hover:text-yellow-400', 
-                     { 'bg-cyan-700 text-yellow-400': isYourNurseActive }]" 
-          >
-            {{ $t('Services') }}
+          <NuxtLink v-if="!token"
+            class="hover:bg-sky-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
+            to="" active-class="bg-sky-500 text-yellow-400" exact-active-class="bg-sky-500 text-yellow-400">
+            {{ $t('Login') }}
           </NuxtLink>
-          <NuxtLink 
-            class="hover:bg-cyan-700 px-4 py-2 rounded-lg delayed cursor-pointer font-bold  hover:text-yellow-400" 
-            active-class="bg-cyan-700 text-yellow-400" 
-            exact-active-class="bg-cyan-700 text-yellow-400"
-          >
-          {{$t('Contact us')}}
+          <button v-if="token" @click="logout"
+            class="hover:bg-sky-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400">
+            {{ $t('Logout') }}
+          </button>
+          <!-- <NuxtLink
+          class="hover:bg-sky-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
+          :to="`/yourNurse/${userID}`"  active-class="bg-sky-500 text-yellow-400" exact-active-class="bg-sky-500 text-yellow-400">
+          {{ $t('My profile') }}
+        </NuxtLink> -->
+          <NuxtLink
+            class="hover:bg-sky-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
+            to="" active-class="bg-sky-500 text-yellow-400"
+            exact-active-class="bg-sky-500 text-yellow-400">
+
+            {{ $t('Notifications') }} </NuxtLink>
+          <NuxtLink :class="['hover:bg-sky-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400',
+            { 'bg-sky-500 text-yellow-400': isYourNurseActive }]" to="">
+            {{ $t('Products') }}
+          </NuxtLink>
+          <NuxtLink
+            class="hover:bg-sky-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
+            to="" active-class="bg-sky-500 text-yellow-400" exact-active-class="bg-sky-500 text-yellow-400">
+            {{ $t('My commissions') }}
 
           </NuxtLink>
+          <NuxtLink
+            class="hover:bg-sky-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
+            to="" active-class="bg-sky-500 text-yellow-400" exact-active-class="bg-sky-500 text-yellow-400">
+            {{ $t('Article') }}
 
-          
+          </NuxtLink>
+        
+
+         
         </div>
       </div>
     </transition>
-    
+
     <Loader v-if="loading" />
-    <main class="px-0 mt-0">
+    <main class="p-0">
       <slot />
     </main>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount, computed } from 'vue';
+import { ref, onMounted, onBeforeUnmount, computed, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
-const { locale } = useI18n();
-const loading = ref(false);
-const router = useRouter();
-const isScrolled = ref(false);
+import { useLocalStorage } from '@vueuse/core'; // استيراد useLocalStorage
 
-const handleScroll = () => {
-  isScrolled.value = window.scrollY > 80;
+const { locale } = useI18n();
+const loading = ref(true);
+const router = useRouter();
+
+// استخدام useLocalStorage بدلاً من localStorage مباشرة
+const token = useLocalStorage('token', null); // "token" هو اسم المفتاح و "null" هو القيمة الافتراضية
+const userID = ref()
+const roles = ref()
+// دالة التحقق من التوكن
+const checkToken = () => {
+  if (!token.value) {
+    // إذا لم يكن هناك توكن في الـ localStorage، يتم تعيين القيمة الافتراضية
+    token.value = localStorage.getItem('token');
+  }
+};
+
+// تسجيل الخروج
+const logout = () => {
+  token.value = null;  // إزالة التوكن من useLocalStorage
+  localStorage.removeItem('userID'); 
+  localStorage.removeItem('roles'); 
+  router.push('/login'); // استخدم router.push بدلاً من navigateTo
+};
+
+// مراقبة التوكن وتحديث حالة token بناءً عليه
+watch(token, (newToken) => {
+  if (newToken) {
+    // إذا كان هناك توكن، يمكنك تنفيذ عمليات معينة
+    console.log("تم تسجيل الدخول");
+  } else {
+    // إذا لم يكن هناك توكن، تنفيذ عمليات أخرى مثل توجيه المستخدم إلى صفحة التسجيل
+    console.log("تم تسجيل الخروج");
+  }
+});
+
+// إضافة مستمع لحدث storage في متصفح
+const handleStorageChange = (event) => {
+  if (event.key === 'token') {
+    // عند تغيير قيمة التوكن في localStorage
+    token.value = event.newValue;
+  }
 };
 
 onMounted(() => {
-  window.addEventListener('scroll', handleScroll);
+  checkToken();
+  loading.value = false;
+  userID.value = localStorage.getItem("userID")
+  roles.value = localStorage.getItem("roles")
+  
+  // الاستماع إلى تغييرات localStorage
+  window.addEventListener('storage', handleStorageChange);
 });
 
 onBeforeUnmount(() => {
-  window.removeEventListener('scroll', handleScroll);
+  // إزالة مستمع الحدث عند إلغاء تحميل الصفحة
+  window.removeEventListener('storage', handleStorageChange);
 });
+
 // التحكم في حالة الـ loading عند التنقل بين الصفحات
 router.beforeEach((to, from, next) => {
   loading.value = true;
@@ -137,11 +189,6 @@ router.beforeEach((to, from, next) => {
 });
 
 router.afterEach(() => {
-  loading.value = false;
-});
-
-// عند تحميل الصفحة لأول مرة
-onMounted(() => {
   loading.value = false;
 });
 
@@ -158,13 +205,13 @@ const toggleDropdown = () => {
 
 // إغلاق القائمة عند النقر خارجها
 const closeDropdownOnClickOutside = (event) => {
-  const dropdown = document.querySelector('.relative'); // عنصر القائمة
-  if (dropdown && !dropdown.contains(event.target)) {
+  const dropdown = document.querySelector('.relative');
+  const toggleButton = event.target.closest('h1'); // عنصر النقر لفتح القائمة
+  if (dropdown && !dropdown.contains(event.target) && !toggleButton) {
     isDropdownOpen.value = false;
   }
 };
 
-// إضافة وإزالة مستمع للنقر عند تشغيل وإيقاف المكون
 onMounted(() => {
   document.addEventListener('click', closeDropdownOnClickOutside);
 });
@@ -187,22 +234,28 @@ const isSignupSectionActive = computed(() => {
 const isYourNurseActive = computed(() => route.path.startsWith('/yourNurse'));
 </script>
 
+
+
+
 <style scoped>
 body.dark {
   background-color: #1e1e1e;
   color: white;
 }
 
-.slide-enter-active, .slide-leave-active {
+.slide-enter-active,
+.slide-leave-active {
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
-.slide-enter, .slide-leave-to {
+.slide-enter,
+.slide-leave-to {
   opacity: 0;
   transform: translateX(-100%);
 }
 
-.slide-enter-to, .slide-leave {
+.slide-enter-to,
+.slide-leave {
   opacity: 1;
   transform: translateX(0);
 }
@@ -271,41 +324,4 @@ body.dark {
 .right-0 {
   right: 0;
 }
-
-.navbar {
-  background-color: transparent;
-  transition: background-color 0.5s ease, box-shadow 0.5s ease; /* دمج الخصائص في سطر واحد */
-  width: 100%;
-  position: fixed;
-  top: 0;
-  z-index: 10;
-}
-
-.navbar.scrolled {
-  background-color: aqua;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* ظل خفيف */
-}
-
-
-
-.hover\:bg-cyan-700:hover {
-  background-color: #0aa8c2 !important;
-}
-
-.hover\:text-yellow-400:hover {
-  color: #ffcc00 !important;
-}
-
-.bg-cyan-700 {
-  background-color: #0aa8c2 !important;
-}
-
-.text-yellow-400 {
-  color: #ffcc00 !important;
-}
-
-.cursor-pointer {
-  cursor: pointer;
-}
-
 </style>
