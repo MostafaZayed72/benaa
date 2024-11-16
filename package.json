@@ -19,9 +19,10 @@
     "@vueuse/core": "^11.1.0",
     "@vueuse/nuxt": "^11.1.0",
     "nuxt": "^3.13.2",
+    "nuxt-swiper": "^2.0.0",
     "swiper": "^11.1.14",
     "vue": "latest",
     "vue-router": "latest",
-    "vue3-carousel": "^0.6.0"
+    "vuetify-nuxt-module": "^0.18.3"
   }
 }

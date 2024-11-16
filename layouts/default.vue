@@ -1,6 +1,6 @@
 <template>
   <div :class="{ 'dark': isDarkMode }" :style="{ direction: locale === 'ar-AR' ? 'rtl' : 'ltr' }">
-    <div class="mb-0 px-4 bg-sky-700 flex justify-between items-center py-2 shadow-xl sticky top-0 z-10 ">
+    <div class="mb-0 px-4 bg-indigo-800 flex justify-between items-center py-2 shadow-xl sticky top-0 z-10 ">
       <div class="flex items-center gap-4">
         <Icon @click="toggleSidebar" name="iconamoon:menu-burger-horizontal"
           class="md:hidden text-xl text-white cursor-pointer" />
@@ -11,49 +11,49 @@
       <!-- الروابط في الشاشات الكبيرة -->
       <div class="links md:flex items-center gap-4 hidden">
         <NuxtLink
-          class="hover:bg-sky-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
-          to="/" active-class="bg-sky-500 text-yellow-400" exact-active-class="bg-sky-500 text-yellow-400">
+          class="hover:bg-indigo-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
+          to="/" active-class="bg-indigo-500 text-yellow-400" exact-active-class="bg-indigo-500 text-yellow-400">
           {{ $t('Home') }}
         </NuxtLink>
         <NuxtLink v-if="!token"
-          class="hover:bg-sky-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
-          to="" active-class="bg-sky-500 text-yellow-400" exact-active-class="bg-sky-500 text-yellow-400">
+          class="hover:bg-indigo-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
+          to="" active-class="bg-indigo-500 text-yellow-400" exact-active-class="bg-indigo-500 text-yellow-400">
           {{ $t('Login') }}
         </NuxtLink>
         <!-- <NuxtLink
-          class="hover:bg-sky-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
-          :to="`/yourNurse/${userID}`"  active-class="bg-sky-500 text-yellow-400" exact-active-class="bg-sky-500 text-yellow-400">
+          class="hover:bg-indigo-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
+          :to="`/yourNurse/${userID}`"  active-class="bg-indigo-500 text-yellow-400" exact-active-class="bg-indigo-500 text-yellow-400">
           {{ $t('My profile') }}
         </NuxtLink> -->
         <NuxtLink
-          class="hover:bg-sky-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
-          to="" active-class="bg-sky-500 text-yellow-400"
-          exact-active-class="bg-sky-500 text-yellow-400">
+          class="hover:bg-indigo-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
+          to="" active-class="bg-indigo-500 text-yellow-400" exact-active-class="bg-indigo-500 text-yellow-400">
           {{ $t('Notifications') }}
         </NuxtLink>
-        <NuxtLink :class="['hover:bg-sky-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400',
-          ]" active-class="bg-sky-500 text-yellow-400" exact-active-class="bg-sky-500 text-yellow-400" to="" >
+        <NuxtLink :class="['hover:bg-indigo-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400',
+        ]" active-class="bg-indigo-500 text-yellow-400" exact-active-class="bg-indigo-500 text-yellow-400" to="">
           {{ $t('Products') }}
         </NuxtLink>
         <NuxtLink
-          class="hover:bg-sky-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
-          to="" active-class="bg-sky-500 text-yellow-400" exact-active-class="bg-sky-500 text-yellow-400">
+          class="hover:bg-indigo-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
+          to="" active-class="bg-indigo-500 text-yellow-400" exact-active-class="bg-indigo-500 text-yellow-400">
           {{ $t('My commissions') }}
         </NuxtLink>
-       
+
         <NuxtLink
-          class="hover:bg-sky-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
-          to="" active-class="bg-sky-500 text-yellow-400" exact-active-class="bg-sky-500 text-yellow-400">
+          class="hover:bg-indigo-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
+          to="" active-class="bg-indigo-500 text-yellow-400" exact-active-class="bg-indigo-500 text-yellow-400">
           {{ $t('Article') }}
         </NuxtLink>
-       
-        
 
-       
+
+
+
       </div>
       <div class="flex items-center gap-2">
-        
-        <Icon class="text-3xl cursor-pointer text-cyan-700 hidden md:flex" name="ic:twotone-log-out" v-if="token" @click="logout" />
+
+        <Icon class="text-3xl cursor-pointer text-cyan-700 hidden md:flex" name="ic:twotone-log-out" v-if="token"
+          @click="logout" />
         <LanguageSwitcher />
 
         <DarkModeToggle />
@@ -62,52 +62,51 @@
 
     <!-- Burger Menu Transition for Small Screens -->
     <transition name="slide">
-      <div v-if="isSidebarOpen" class="bg-sky-700 md:hidden border-t-2 border-sky-600">
+      <div v-if="isSidebarOpen" class="bg-indigo-700 md:hidden border-t-2 border-indigo-600">
         <div class="flex flex-col p-4">
           <NuxtLink
-            class="hover:bg-sky-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
-            to="/" active-class="bg-sky-500 text-yellow-400" exact-active-class="bg-sky-500 text-yellow-400">
+            class="hover:bg-indigo-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
+            to="/" active-class="bg-indigo-500 text-yellow-400" exact-active-class="bg-indigo-500 text-yellow-400">
             {{ $t('Home') }}
           </NuxtLink>
           <NuxtLink v-if="!token"
-            class="hover:bg-sky-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
-            to="" active-class="bg-sky-500 text-yellow-400" exact-active-class="bg-sky-500 text-yellow-400">
+            class="hover:bg-indigo-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
+            to="" active-class="bg-indigo-500 text-yellow-400" exact-active-class="bg-indigo-500 text-yellow-400">
             {{ $t('Login') }}
           </NuxtLink>
           <button v-if="token" @click="logout"
-            class="hover:bg-sky-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400">
+            class="hover:bg-indigo-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400">
             {{ $t('Logout') }}
           </button>
           <!-- <NuxtLink
-          class="hover:bg-sky-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
-          :to="`/yourNurse/${userID}`"  active-class="bg-sky-500 text-yellow-400" exact-active-class="bg-sky-500 text-yellow-400">
+          class="hover:bg-indigo-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
+          :to="`/yourNurse/${userID}`"  active-class="bg-indigo-500 text-yellow-400" exact-active-class="bg-indigo-500 text-yellow-400">
           {{ $t('My profile') }}
         </NuxtLink> -->
           <NuxtLink
-            class="hover:bg-sky-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
-            to="" active-class="bg-sky-500 text-yellow-400"
-            exact-active-class="bg-sky-500 text-yellow-400">
+            class="hover:bg-indigo-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
+            to="" active-class="bg-indigo-500 text-yellow-400" exact-active-class="bg-indigo-500 text-yellow-400">
 
             {{ $t('Notifications') }} </NuxtLink>
-          <NuxtLink :class="['hover:bg-sky-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400',
-            { 'bg-sky-500 text-yellow-400': isYourNurseActive }]" to="">
+          <NuxtLink :class="['hover:bg-indigo-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400',
+            { 'bg-indigo-500 text-yellow-400': isYourNurseActive }]" to="">
             {{ $t('Products') }}
           </NuxtLink>
           <NuxtLink
-            class="hover:bg-sky-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
-            to="" active-class="bg-sky-500 text-yellow-400" exact-active-class="bg-sky-500 text-yellow-400">
+            class="hover:bg-indigo-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
+            to="" active-class="bg-indigo-500 text-yellow-400" exact-active-class="bg-indigo-500 text-yellow-400">
             {{ $t('My commissions') }}
 
           </NuxtLink>
           <NuxtLink
-            class="hover:bg-sky-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
-            to="" active-class="bg-sky-500 text-yellow-400" exact-active-class="bg-sky-500 text-yellow-400">
+            class="hover:bg-indigo-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
+            to="" active-class="bg-indigo-500 text-yellow-400" exact-active-class="bg-indigo-500 text-yellow-400">
             {{ $t('Article') }}
 
           </NuxtLink>
-        
 
-         
+
+
         </div>
       </div>
     </transition>
@@ -143,8 +142,8 @@ const checkToken = () => {
 // تسجيل الخروج
 const logout = () => {
   token.value = null;  // إزالة التوكن من useLocalStorage
-  localStorage.removeItem('userID'); 
-  localStorage.removeItem('roles'); 
+  localStorage.removeItem('userID');
+  localStorage.removeItem('roles');
   router.push('/login'); // استخدم router.push بدلاً من navigateTo
 };
 
@@ -172,7 +171,7 @@ onMounted(() => {
   loading.value = false;
   userID.value = localStorage.getItem("userID")
   roles.value = localStorage.getItem("roles")
-  
+
   // الاستماع إلى تغييرات localStorage
   window.addEventListener('storage', handleStorageChange);
 });

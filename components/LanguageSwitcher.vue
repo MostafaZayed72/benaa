@@ -1,25 +1,13 @@
 <template>
-    <div class="language-switcher  rounded-3xl bg-white px-2 py-1 ">
+    <div class="language-switcher  rounded-3xl  px-2 py-1 ">
 
       <div  v-if="locale === 'ar-AR'" class="flex gap-1 items-center cursor-pointer" @click="switchLanguage('en-US')">
-        <h1
        
-        
-        class="hover:text-neutral-800 delayed  text-black   rounded button delayed"
-      >
-        English
-    </h1>
-    <Icon class="text-black " name="ic:round-language" />
+    <Icon class="text-xl text-white " name="ic:round-language" />
       </div>
       <div v-if="locale === 'en-US'" class="flex gap-1 items-center cursor-pointer"   @click="switchLanguage('ar-AR')">
-        <h1
-        
-      
-        class="hover:text-neutral-800 delayed  text-black   rounded button delayed "
-      >
-        عربي
-    </h1>
-    <Icon class="text-black text-xl " name="ic:round-language" />
+       
+    <Icon class=" text-xl text-white " name="ic:round-language" />
       </div>
      
    

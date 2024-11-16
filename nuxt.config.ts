@@ -9,6 +9,8 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxt/fonts',
     '@nuxt/icon',
+    'nuxt-swiper',
+    'vuetify-nuxt-module',
   ],
   
   i18n: {

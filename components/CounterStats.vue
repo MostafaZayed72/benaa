@@ -35,16 +35,16 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex flex-col justify-center items-center gap-8 md:flex-row md:justify-around">
+  <div class="flex flex-col justify-center items-center gap-8 ">
     <div class="stat-item">
-        <div class="stat-label">{{ $t('Visitors Count') }}</div>
-      <div class="stat-value">{{ visitorsCount }}</div>
+        <div class="stat-label  font-bold">{{ $t('Visitors Count') }}</div>
+      <div class="stat-value text-teal-500">{{ visitorsCount }}</div>
       
     </div>
 
     <div class="stat-item">
-        <div class="stat-label">{{ $t('Customers Count') }}</div>
-      <div class="stat-value">{{ customersCount }}</div>
+        <div class="stat-label font-bold">{{ $t('Customers Count') }}</div>
+      <div class="stat-value text-teal-500">{{ customersCount }}</div>
       
     </div>
   </div>
@@ -68,7 +68,7 @@ onMounted(() => {
 .stat-value {
   font-size: 3rem;
   font-weight: bold;
-  color: #3498db;
+  
 }
 
 .stat-label {

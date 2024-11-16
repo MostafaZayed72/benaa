@@ -1,61 +1,78 @@
-<script setup>
-import 'vue3-carousel/dist/carousel.css';
-import { Carousel, Slide, Navigation } from 'vue3-carousel';
+<script setup lang="ts">
+const containerRef = ref(null);
 
-// إعداد بيانات الصور والأسعار
-const slides = [
-  { image: "https://ebooklibery.com/storage/media/5mrhX3cJM3ZzvPDFNKi2dYL957eGVzWMnj2Gscix.webp", price: 50 },
-  { image: "https://books-library.net/files/s-books-library.net-03301204Of1X7.jpg", price: 75 },
-  { image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI1-8R7wQ82jiRVFkTqjGnPr1yS_6WvwbwGd-LZ5tCRsapVnCqI17mjRY4yA66B7tmSwU&usqp=CAU", price: 100 },
-  { image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpQMTyWwgxmo4frU8CitKpuRkNAhkGsmgoWxMGb0gp1Gxt65sh5oNvn3h0EDMu2O7izMs&usqp=CAU", price: 125 },
-  { image: "https://foulabook.com/storage/photo/73999.2020-07-14.1594687956.jpg", price: 150 },
-  { image: "https://foulabook.com/storage/photo/33530.2021-08-16.1629147893.jpg", price: 200 },
+const swiper = useSwiper(containerRef, {
+  effect: 'creative',
+  loop: true,
+  autoplay: {
+    delay: 5000,
+  },
+  creativeEffect: {
+    prev: {
+      shadow: true,
+      translate: [0, 0, -400],
+    },
+    next: {
+      shadow: true,
+      translate: [0, 0, -400],
+    },
+  },
+});
 
-];
-
-const config = {
-  autoplay: 3000,
-  itemsToShow: 3.95,
-  wrapAround: true,
-  transition: 500,
-};
+onMounted(() => {
+  console.log(swiper.instance);
+});
 </script>
 
 <template>
-  <Carousel v-bind="config">
-    <Slide v-for="(slide, index) in slides" :key="index">
-      <div class="mx-4 ">
-        <!-- عرض الصورة -->
-        <img :src="slide.image" alt="Image" class="w-40 h-40 md:w-100 md:h-80 rounded-xl" />
-        <!-- عرض السعر -->
+  <ClientOnly>
+    <swiper-container ref="containerRef" :init="false" class="custom-swiper">
+      <!-- الشرائح الأساسية -->
+      <swiper-slide>
+       <div>
+        <img
+          src="https://i0.wp.com/abunawaf.com/wp-content/uploads/2021/11/eBook.jpg?resize=700%2C453&ssl=1"
+          alt=""
+          class="w-100 rounded-xl px-2"
+        />
+        <div class="flex flex-col items-center">
+          <h1 class="font-bold text-xl my-2">{{ $t('Price') }} : 283$</h1>
+<h1 class="font-bold text-gray-500  text-center">كتاب غني عن التعريف يحتوي على الكثير من المعلومات القيمة والتي تجعلك  ...</h1>
+<NuxtLink to="" class="mt-4 bg-teal-500 text-white px-2 py-1 rounded-xl cursor-pointer hover:bg-indigo-700 delayed">{{ $t('More Details') }}</NuxtLink>
+        </div>
+       </div>
+      </swiper-slide>
 
-        
-        <p>${{ slide.price }}</p>
-        <NuxtLink to="" class="bg-sky-700 text-white px-2 py-1 rounded hover:bg-sky-500 delayed cursor-pointer ">
-          {{ $t('View') }}</NuxtLink>
-      </div>
-    </Slide>
-
-    <template #addons>
-      <Navigation />
-    </template>
-  </Carousel>
+      <!-- الشريحة الجديدة -->
+      <!-- <swiper-slide style="background-color: rgb(50, 50, 50); color: white;">
+        <h1>
+          article
+        </h1>
+      </swiper-slide> -->
+    </swiper-container>
+  </ClientOnly>
 </template>
 
-<style>
-.carousel__item {
-  text-align: center;
-}
-
-.carousel__image {
+<style lang="css">
+/* لضبط ارتفاع الحاوية */
+.custom-swiper {
   width: 100%;
-
-  border-radius: 8px;
-  margin-bottom: 10px;
+  
+  overflow: hidden;
 }
 
-.carousel__price {
-  font-size: 1rem;
-  font-weight: bold;
+/* لضمان أن كل شريحة تأخذ نفس ارتفاع الحاوية */
+swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* لجعل الصور مناسبة للحجم */
+.slide-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* تضبط حجم الصورة بما يتناسب مع الحاوية */
 }
 </style>
