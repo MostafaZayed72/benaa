@@ -1,6 +1,6 @@
 <template>
     <div class="top-marketers-container p-4 text-center mx-auto" style="direction: rtl;">
-        <h2 class="text-2xl font-bold mb-8">أعلى المسوقين</h2>
+        <h2 class="text-2xl font-bold mb-8">{{ $t('Top Marketers') }}</h2>
         <div class="flex flex-col gap-3 md:flex-row justify-around">
             <div v-for="marketer in topMarketers" :key="marketer.id" class="marketer-card p-4 bg-sky-700 shadow-md rounded-md md:w-1/4">
                 <div>
