@@ -37,13 +37,13 @@ onMounted(() => {
 <template>
   <div class="flex flex-col justify-center items-center gap-8 md:flex-row md:justify-around">
     <div class="stat-item">
-        <div class="stat-label">عدد الزوار</div>
+        <div class="stat-label">{{ $t('Visitors Count') }}</div>
       <div class="stat-value">{{ visitorsCount }}</div>
       
     </div>
 
     <div class="stat-item">
-        <div class="stat-label">عدد العملاء</div>
+        <div class="stat-label">{{ $t('Customers Count') }}</div>
       <div class="stat-value">{{ customersCount }}</div>
       
     </div>
