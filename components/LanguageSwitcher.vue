@@ -7,7 +7,7 @@
       </div>
       <div v-if="locale === 'en-US'" class="flex gap-1 items-center cursor-pointer"   @click="switchLanguage('ar-AR')">
        
-    <Icon class=" text-xl text-white " name="ic:round-language" />
+    <Icon class=" text-xl text-white" name="ic:round-language" />
       </div>
      
    
