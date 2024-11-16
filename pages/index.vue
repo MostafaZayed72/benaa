@@ -1,5 +1,5 @@
 <template>
-   <div class="mt-40">
+   <div class="mt-10">
     <HomeCarousel />
     <CounterStats class="my-28"/>
     <TopMarketer />
