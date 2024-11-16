@@ -28,7 +28,7 @@ const config = {
         <!-- عرض الصورة -->
         <img :src="slide.image" alt="Image" class="w-40 h-40 md:w-100 md:h-80 rounded-xl" />
         <!-- عرض السعر -->
-        <p class="carousel__price mb-2">{{ $t('Price') }}</p>
+
         
         <p>${{ slide.price }}</p>
         <NuxtLink to="" class="bg-sky-700 text-white px-2 py-1 rounded hover:bg-sky-500 delayed cursor-pointer ">
