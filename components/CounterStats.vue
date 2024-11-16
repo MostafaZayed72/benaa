@@ -41,7 +41,7 @@ onMounted(() => {
       <div class="circle-loader"></div>
       <div>
         <div class="stat-value text-xl font-bold">{{ visitorsCount }}</div>
-        <div class="stat-label mt-2 font-bold">{{ $t('Visitors Count') }}</div>
+        <div class="stat-label mt-2 font-bold">{{ $t('Visits') }}</div>
       </div>
     </div>
 
@@ -50,7 +50,7 @@ onMounted(() => {
       <div class="circle-loader"></div>
       <div>
         <div class="stat-value text-xl font-bold">{{ customersCount }}</div>
-        <div class="stat-label mt-2 font-bold">{{ $t('Customers Count') }}</div>
+        <div class="stat-label mt-2 font-bold">{{ $t('Customers') }}</div>
       </div>
     </div>
   </div>
