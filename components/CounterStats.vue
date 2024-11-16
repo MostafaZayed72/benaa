@@ -35,45 +35,70 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex flex-col justify-center items-center gap-8 ">
-    <div class="stat-item">
-        <div class="stat-label  font-bold">{{ $t('Visitors Count') }}</div>
-      <div class="stat-value text-teal-500">{{ visitorsCount }}</div>
-      
+  <div class="flex justify-center items-center gap-8">
+    <!-- دائـرة الزوار -->
+    <div class="stat-item bg-violet-700 rounded-full w-40 h-40 flex items-center justify-center text-white shadow-lg text-center relative">
+      <div class="circle-loader"></div>
+      <div>
+        <div class="stat-value text-xl font-bold">{{ visitorsCount }}</div>
+        <div class="stat-label mt-2 font-bold">{{ $t('Visitors Count') }}</div>
+      </div>
     </div>
 
-    <div class="stat-item">
-        <div class="stat-label font-bold">{{ $t('Customers Count') }}</div>
-      <div class="stat-value text-teal-500">{{ customersCount }}</div>
-      
+    <!-- دائـرة العملاء -->
+    <div class="stat-item bg-violet-700 rounded-full w-40 h-40 flex items-center justify-center text-white shadow-lg text-center relative">
+      <div class="circle-loader"></div>
+      <div>
+        <div class="stat-value text-xl font-bold">{{ customersCount }}</div>
+        <div class="stat-label mt-2 font-bold">{{ $t('Customers Count') }}</div>
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-.stats-container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 30px;
-  
-  padding: 20px;
-  border-radius: 10px;
-}
-
 .stat-item {
-  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
 }
 
-.stat-value {
-  font-size: 3rem;
-  font-weight: bold;
-  
+.stat-item:hover {
+  transform: scale(1.1);
 }
 
-.stat-label {
-  margin-top: 10px;
-  font-size: 1.2rem;
-  
+/* تأثير التحميل حول الدائرة */
+.circle-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.5);
+  border-top: 4px solid white;
+  animation: spin 1.5s linear infinite;
+}
+
+.stat-item:before,
+.stat-item:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  border: 2px dashed rgba(255, 255, 255, 0.5);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 </style>
