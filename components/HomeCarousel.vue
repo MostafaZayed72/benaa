@@ -10,7 +10,7 @@ const slides = [
   { image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpQMTyWwgxmo4frU8CitKpuRkNAhkGsmgoWxMGb0gp1Gxt65sh5oNvn3h0EDMu2O7izMs&usqp=CAU", price: 125 },
   { image: "https://foulabook.com/storage/photo/73999.2020-07-14.1594687956.jpg", price: 150 },
   { image: "https://foulabook.com/storage/photo/33530.2021-08-16.1629147893.jpg", price: 200 },
-  
+
 ];
 
 const config = {
@@ -24,12 +24,15 @@ const config = {
 <template>
   <Carousel v-bind="config">
     <Slide v-for="(slide, index) in slides" :key="index">
-      <div class="mx-4">
+      <div class="mx-4 ">
         <!-- عرض الصورة -->
         <img :src="slide.image" alt="Image" class="w-40 h-40 md:w-100 md:h-80 rounded-xl" />
         <!-- عرض السعر -->
-        <p class="carousel__price mb-2">{{ $t('Price') }}: ${{ slide.price }}</p>
-        <NuxtLink to="" class="bg-sky-700 text-white px-2 py-1 rounded hover:bg-sky-500 delayed cursor-pointer ">{{$t('View')  }}</NuxtLink>
+        <p class="carousel__price mb-2">{{ $t('Price') }}</p>
+        <hr>
+        <p>${{ slide.price }}</p>
+        <NuxtLink to="" class="bg-sky-700 text-white px-2 py-1 rounded hover:bg-sky-500 delayed cursor-pointer ">
+          {{ $t('View') }}</NuxtLink>
       </div>
     </Slide>
 
