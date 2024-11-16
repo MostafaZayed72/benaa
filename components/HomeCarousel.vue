@@ -24,7 +24,7 @@ const config = {
 <template>
   <Carousel v-bind="config">
     <Slide v-for="(slide, index) in slides" :key="index">
-      <div class="">
+      <div class="mx-4">
         <!-- عرض الصورة -->
         <img :src="slide.image" alt="Image" class="w-40 h-40 md:w-100 md:h-80 rounded-xl" />
         <!-- عرض السعر -->
