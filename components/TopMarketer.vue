@@ -4,8 +4,8 @@
         <div class="flex flex-col gap-3 md:flex-row justify-around">
             <div v-for="marketer in topMarketers" :key="marketer.id" class="marketer-card p-4 bg-sky-700 shadow-md rounded-md md:w-1/4">
                 <div>
-                    <h3 class="text-xl font-semibold mb-4">{{ marketer.name }}</h3>
-                    <p><strong>عدد العملاء: </strong>{{ marketer.clients }}</p>
+                    <h3 class="text-xl font-semibold mb-4 text-white">{{ marketer.name }}</h3>
+                    <p class="text-white"><strong>عدد العملاء: </strong>{{ marketer.clients }}</p>
                 </div>
             </div>
         </div>
