@@ -1,12 +1,12 @@
 <template>
-   <div style="background-image: url('https://img.freepik.com/free-photo/top-view-monochromatic-leaves-with-copy-space_23-2148770316.jpg?t=st=1731779999~exp=1731783599~hmac=c093d458764262f2af576a2ca3545876ded35c9cdfef0c1f4b7e2875f2288f7d&w=826') ;background-size: cover;">
+   <div style="background-image: url('/imgs/ranking.jpg') ;background-size: cover;">
 <h1 class="mx-auto text-center mb-10 text-2xl font-bold bg-indigo-700 w-fit px-4 py-2 rounded text-white">{{ $t('Top Marketers') }}</h1>
     <v-carousel
       height="200"
       show-arrows="hover"
       cycle
       hide-delimiter-background
-      
+     
     >
       <!-- تكرار المسوقين باستخدام v-for -->
       <v-carousel-item v-for="(marketer, index) in marketers" :key="index">
