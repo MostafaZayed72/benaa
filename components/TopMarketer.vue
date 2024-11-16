@@ -17,8 +17,8 @@
                 <h3 class="text-sm text-black ">({{$t('Rank')}}: {{ marketer.number }})</h3>
 
             </div>
-            <p ><strong class="text-black">عدد العملاء: </strong>{{ marketer.clients }}</p>
-            <p ><strong class="text-black">المدينة: </strong>{{ marketer.city }}</p>
+            <p class="text-black"><strong >عدد العملاء: </strong>{{ marketer.clients }}</p>
+            <p class="text-black"><strong >المدينة: </strong>{{ marketer.city }}</p>
           </div>
         </div>
       </v-carousel-item>
