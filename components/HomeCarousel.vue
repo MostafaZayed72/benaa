@@ -1,23 +1,65 @@
 <template>
   <div>
-    <v-carousel height="250" show-arrows="false" cycle hide-delimiter-background>
+    <v-carousel :height="carouselHeight" show-arrows="false" cycle hide-delimiter-background>
       <v-carousel-item>
         <div class="relative">
-          <!-- الصورة -->
           <img class="w-100 px-4 rounded-xl"
             src="https://radiokielce.pl/wp-content/uploads/2024/09/czytanie-750x375.jpg" alt="Image" />
 
-          <!-- الزر -->
-          <button class="absolute btn-more bg-violet-700 hover:bg-violet-900 delayed"
+          <button class="absolute btn-more bg-violet-700 hover:bg-violet-900 delayed "
             :class="{ 'left-10': $i18n.locale === 'ar-AR', 'right-10': $i18n.locale === 'en-US' }">
             {{ $t('More') }}
           </button>
+        </div>
+      </v-carousel-item>
+      <v-carousel-item>
+        <div class="relative">
+          <img class="w-100 px-4 rounded-xl relative" src="/public/imgs/pic.jpeg" alt="Image" />
+          <h1 class="absolute right-4 top-10 md:top-20 md:right-20 text-blue-800 font-bold text-center">{{ $t('If you see a list of rich people') }} <br>
+          {{$t('and want to be with them')}} <br>
+ {{$t('do the same')}}
+        </h1>
+
         </div>
       </v-carousel-item>
 
     </v-carousel>
   </div>
 </template>
+
+
+<script setup>
+import { ref, onMounted, onUnmounted } from 'vue';
+
+const carouselHeight = ref(220); // الطول الافتراضي للشاشات الصغيرة
+
+// دالة لتحديث الارتفاع بناءً على حجم الشاشة
+const updateHeight = () => {
+  if (window.innerWidth >= 950) {
+    carouselHeight.value = 850; // الطول للشاشات الكبيرة جدًا
+  } else if (window.innerWidth >= 750) {
+    carouselHeight.value = 500; // الطول للشاشات الكبيرة
+  } else if (window.innerWidth >= 510) {
+    carouselHeight.value = 400; // الطول للشاشات المتوسطة
+  } else {
+    carouselHeight.value = 220; // الطول للشاشات الصغيرة
+  }
+};
+
+onMounted(() => {
+  updateHeight(); // تعيين الارتفاع عند تحميل الصفحة
+
+  // إضافة مستمع للحدث resize لتحديث الارتفاع عند تغيير حجم الشاشة
+  window.addEventListener('resize', updateHeight);
+});
+
+onUnmounted(() => {
+  // إزالة مستمع الحدث عند التخلص من المكون
+  window.removeEventListener('resize', updateHeight);
+});
+</script>
+
+
 
 <style>
 .relative {

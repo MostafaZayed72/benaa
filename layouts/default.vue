@@ -50,7 +50,7 @@
 
 
       </div>
-      <div class="flex items-center gap-2">
+      <div class="flex items-center ">
 
         <Icon class="text-3xl cursor-pointer text-cyan-700 hidden md:flex" name="ic:twotone-log-out" v-if="token"
           @click="logout" />

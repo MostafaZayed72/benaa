@@ -1,13 +1,13 @@
 <template>
-    <div class="language-switcher  rounded-3xl  px-2 py-1 ">
+    <div class="language-switcher  rounded-3xl   py-1 ">
 
       <div  v-if="locale === 'ar-AR'" class="flex gap-1 items-center cursor-pointer" @click="switchLanguage('en-US')">
        
-    <Icon class="text-xl text-white " name="ic:round-language" />
+    <Icon class="text-2xl text-white " name="ic:round-language" />
       </div>
       <div v-if="locale === 'en-US'" class="flex gap-1 items-center cursor-pointer"   @click="switchLanguage('ar-AR')">
        
-    <Icon class=" text-xl text-white" name="ic:round-language" />
+    <Icon class=" text-2xl text-white" name="ic:round-language" />
       </div>
      
    

@@ -1,7 +1,8 @@
 <template>
-  <div>
-    <h1 class="mx-auto text-center text-2xl font-bold bg-violet-700 w-fit px-4 py-2 rounded text-white">{{ $t('The distinguished marketer') }}</h1>
+  <div >
+    <h1 class="mx-auto text-center text font-bold bg-violet-700 w-fit px-4 py-2 rounded-full text-white">{{ $t('The distinguished marketer') }}</h1>
     <v-carousel height="250" show-arrows="hover" cycle hide-delimiter-background>
+      
       <!-- تكرار المسوقين باستخدام v-for -->
       <v-carousel-item v-for="(marketer, index) in marketers" :key="index">
         <div class="flex flex-col gap-3 md:flex-row justify-center md:justify-around">
@@ -9,7 +10,7 @@
             <div class="flex flex-col items-center md:flex-row justify-center md:gap-2">
               <img class="w-16 h-16 rounded-full" src="/public/imgs/person.png" alt="">
               <h3 class="text-xl font-semibold text-violet-900">{{ marketer.name }}</h3>
-              <h3 class="text-sm text-violet-900">({{ $t('Rank') }}: {{ marketer.number }})</h3>
+              
               <!-- عرض النجوم بناءً على المركز -->
               <div class="flex">
                 <template v-if="marketer.number === '1'">
