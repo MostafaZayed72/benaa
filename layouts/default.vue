@@ -11,38 +11,38 @@
       <!-- الروابط في الشاشات الكبيرة -->
       <div class="links md:flex items-center gap-4 hidden">
         <NuxtLink
-          class="hover:bg-indigo-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
-          to="/" active-class="bg-indigo-500 text-yellow-400" exact-active-class="bg-indigo-500 text-yellow-400">
+          class="hover:bg-violet-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
+          to="/" active-class="bg-violet-500 text-yellow-400" exact-active-class="bg-violet-500 text-yellow-400">
           {{ $t('Home') }}
         </NuxtLink>
         <NuxtLink v-if="!token"
-          class="hover:bg-indigo-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
-          to="" active-class="bg-indigo-500 text-yellow-400" exact-active-class="bg-indigo-500 text-yellow-400">
+          class="hover:bg-violet-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
+          to="" active-class="bg-violet-500 text-yellow-400" exact-active-class="bg-violet-500 text-yellow-400">
           {{ $t('Login') }}
         </NuxtLink>
         <!-- <NuxtLink
-          class="hover:bg-indigo-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
-          :to="`/yourNurse/${userID}`"  active-class="bg-indigo-500 text-yellow-400" exact-active-class="bg-indigo-500 text-yellow-400">
+          class="hover:bg-violet-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
+          :to="`/yourNurse/${userID}`"  active-class="bg-violet-500 text-yellow-400" exact-active-class="bg-violet-500 text-yellow-400">
           {{ $t('My profile') }}
         </NuxtLink> -->
         <NuxtLink
-          class="hover:bg-indigo-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
-          to="" active-class="bg-indigo-500 text-yellow-400" exact-active-class="bg-indigo-500 text-yellow-400">
+          class="hover:bg-violet-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
+          to="" active-class="bg-violet-500 text-yellow-400" exact-active-class="bg-violet-500 text-yellow-400">
           {{ $t('Notifications') }}
         </NuxtLink>
-        <NuxtLink :class="['hover:bg-indigo-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400',
-        ]" active-class="bg-indigo-500 text-yellow-400" exact-active-class="bg-indigo-500 text-yellow-400" to="">
+        <NuxtLink :class="['hover:bg-violet-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400',
+        ]" active-class="bg-violet-500 text-yellow-400" exact-active-class="bg-violet-500 text-yellow-400" to="">
           {{ $t('Products') }}
         </NuxtLink>
         <NuxtLink
-          class="hover:bg-indigo-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
-          to="" active-class="bg-indigo-500 text-yellow-400" exact-active-class="bg-indigo-500 text-yellow-400">
+          class="hover:bg-violet-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
+          to="" active-class="bg-violet-500 text-yellow-400" exact-active-class="bg-violet-500 text-yellow-400">
           {{ $t('My commissions') }}
         </NuxtLink>
 
         <NuxtLink
-          class="hover:bg-indigo-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
-          to="" active-class="bg-indigo-500 text-yellow-400" exact-active-class="bg-indigo-500 text-yellow-400">
+          class="hover:bg-violet-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
+          to="" active-class="bg-violet-500 text-yellow-400" exact-active-class="bg-violet-500 text-yellow-400">
           {{ $t('Article') }}
         </NuxtLink>
 
@@ -62,45 +62,45 @@
 
     <!-- Burger Menu Transition for Small Screens -->
     <transition name="slide">
-      <div v-if="isSidebarOpen" class="bg-indigo-700 md:hidden border-t-2 border-indigo-600">
+      <div v-if="isSidebarOpen" class="bg-violet-700 md:hidden border-t-2 border-violet-600">
         <div class="flex flex-col p-4">
           <NuxtLink
-            class="hover:bg-indigo-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
-            to="/" active-class="bg-indigo-500 text-yellow-400" exact-active-class="bg-indigo-500 text-yellow-400">
+            class="hover:bg-violet-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
+            to="/" active-class="bg-violet-500 text-yellow-400" exact-active-class="bg-violet-500 text-yellow-400">
             {{ $t('Home') }}
           </NuxtLink>
           <NuxtLink v-if="!token"
-            class="hover:bg-indigo-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
-            to="" active-class="bg-indigo-500 text-yellow-400" exact-active-class="bg-indigo-500 text-yellow-400">
+            class="hover:bg-violet-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
+            to="" active-class="bg-violet-500 text-yellow-400" exact-active-class="bg-violet-500 text-yellow-400">
             {{ $t('Login') }}
           </NuxtLink>
           <button v-if="token" @click="logout"
-            class="hover:bg-indigo-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400">
+            class="hover:bg-violet-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400">
             {{ $t('Logout') }}
           </button>
           <!-- <NuxtLink
-          class="hover:bg-indigo-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
-          :to="`/yourNurse/${userID}`"  active-class="bg-indigo-500 text-yellow-400" exact-active-class="bg-indigo-500 text-yellow-400">
+          class="hover:bg-violet-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
+          :to="`/yourNurse/${userID}`"  active-class="bg-violet-500 text-yellow-400" exact-active-class="bg-violet-500 text-yellow-400">
           {{ $t('My profile') }}
         </NuxtLink> -->
           <NuxtLink
-            class="hover:bg-indigo-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
-            to="" active-class="bg-indigo-500 text-yellow-400" exact-active-class="bg-indigo-500 text-yellow-400">
+            class="hover:bg-violet-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
+            to="" active-class="bg-violet-500 text-yellow-400" exact-active-class="bg-violet-500 text-yellow-400">
 
             {{ $t('Notifications') }} </NuxtLink>
-          <NuxtLink :class="['hover:bg-indigo-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400',
-            { 'bg-indigo-500 text-yellow-400': isYourNurseActive }]" to="">
+          <NuxtLink :class="['hover:bg-violet-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400',
+            { 'bg-violet-500 text-yellow-400': isYourNurseActive }]" to="">
             {{ $t('Products') }}
           </NuxtLink>
           <NuxtLink
-            class="hover:bg-indigo-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
-            to="" active-class="bg-indigo-500 text-yellow-400" exact-active-class="bg-indigo-500 text-yellow-400">
+            class="hover:bg-violet-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
+            to="" active-class="bg-violet-500 text-yellow-400" exact-active-class="bg-violet-500 text-yellow-400">
             {{ $t('My commissions') }}
 
           </NuxtLink>
           <NuxtLink
-            class="hover:bg-indigo-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
-            to="" active-class="bg-indigo-500 text-yellow-400" exact-active-class="bg-indigo-500 text-yellow-400">
+            class="hover:bg-violet-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
+            to="" active-class="bg-violet-500 text-yellow-400" exact-active-class="bg-violet-500 text-yellow-400">
             {{ $t('Article') }}
 
           </NuxtLink>
