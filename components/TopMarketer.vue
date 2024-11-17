@@ -1,6 +1,6 @@
 <template>
   <div >
-    <h1 class="mx-auto text-center text font-bold bg-violet-700 w-fit px-4 py-2 rounded-full text-white">{{ $t('The distinguished marketer') }}</h1>
+    <h1 class="mx-auto text-center text font-bold  w-fit px-4 py-2 rounded-full text-white" style="background-color: #7733bc;">{{ $t('The distinguished marketer') }}</h1>
     <v-carousel height="250" show-arrows="hover" cycle hide-delimiter-background>
       
       <!-- تكرار المسوقين باستخدام v-for -->

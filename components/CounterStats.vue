@@ -58,8 +58,8 @@ onMounted(() => {
 /* تصميم الدوائر */
 .stat-item {
   position: relative;
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   background-image: url('/public/imgs/test.png'); /* ضع مسار الصورة هنا */
   background-size: cover;
   background-position: center;
