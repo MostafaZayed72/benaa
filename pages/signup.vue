@@ -1,7 +1,7 @@
 <template>
     <div class="h-screen flex flex-col items-center justify-center"
-    style="background-image: url('/imgs/cover.png'); background-repeat: repeat; background-size: cover; background-attachment: fixed; background-position: center bottom;">
-        <div class="max-w-md p-6 bg-violet-700 shadow-md rounded-lg">
+    style="background-image: url('/imgs/cover.png');  background-size: cover; background-attachment: fixed; background-position: center bottom;">
+        <div class="max-w-md p-6 bg-violet-700 shadow-md rounded-lg"  style="background-image: url('/imgs/cover.png');  background-size: cover; background-attachment: fixed; background-position: center bottom;">
             <h1 class="text-2xl font-bold mb-6 text-center">{{ $t('تسجيل ممرض جديد') }}</h1>
             <form @submit.prevent="registerNurse" class="space-y-4">
                 <InputText v-model="firstName" :placeholder="$t('الاسم الأول')" required class="w-full" />
