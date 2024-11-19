@@ -152,8 +152,8 @@ const checkToken = () => {
 
 // تسجيل الخروج
 const logout = () => {
-  token.value = null;  // إزالة التوكن من useLocalStorage
   localStorage.removeItem('userID');
+  localStorage.removeItem('token');
   localStorage.removeItem('roles');
   navigateTo('/login'); // استخدم router.push بدلاً من navigateTo
 };
