@@ -10,7 +10,7 @@
                 <InputText v-model="mobileNo" style="direction: rtl;" :placeholder="$t('رقم الموبايل')" type="tel" required class="w-full" />
                 <InputText v-model="whatsAppNo" style="direction: rtl;" :placeholder="$t('رقم الواتساب (اختياري)')" type="tel" class="w-full" />
                 <InputText v-model="city" :placeholder="$t('المدينة')" required class="w-full" />
-                <Calendar v-model="birthday" :placeholder="$t(' الميلاد')" class="w-full" required />
+                <!-- <Calendar v-model="birthday" :placeholder="$t(' الميلاد')" class="w-full" required /> -->
                 <InputText v-model="email" :placeholder="$t('البريد الإلكتروني')" type="email" required class="w-full" />
                 <InputText v-model="password" :placeholder="$t('كلمة المرور')" type="password" required class="w-full" />
                 <InputText v-model="confirmPassword" :placeholder="$t('تأكيد كلمة المرور')" type="password" required class="w-full" />
