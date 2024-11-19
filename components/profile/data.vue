@@ -13,7 +13,7 @@
             <span class="font-medium text-gray-600 flex items-center gap-1"><Icon name="material-symbols:person-rounded" class="text-black text-xl" />{{ $t('Full Name') }}:</span>
             <span class="text-gray-900">{{ userData.firstName }} {{ userData.lastName }}</span>
           </div>
-          <div class="flex justify-center gap-10">
+          <div class="flex sm:justify-center md:justify-between gap-10">
             <span class="font-medium text-gray-600 flex items-center gap-1"><Icon name="mdi:email" class="text-red-400 text-xl" />{{ $t('Email') }}:</span>
             <span class="text-gray-900">{{ userData.email }}</span>
           </div>
