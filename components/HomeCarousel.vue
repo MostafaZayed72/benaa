@@ -4,7 +4,7 @@
       <v-carousel-item>
         <div class="relative">
           <img class="w-100 px-4 rounded-xl"
-            src="https://radiokielce.pl/wp-content/uploads/2024/09/czytanie-750x375.jpg" alt="Image" />
+            src="/public/imgs/product.png" alt="Image" />
 
           <button class="absolute btn-more bg-violet-700 hover:bg-violet-900 delayed "
             :class="{ 'left-10': $i18n.locale === 'ar-AR', 'right-10': $i18n.locale === 'en-US' }">
@@ -14,11 +14,11 @@
       </v-carousel-item>
       <v-carousel-item>
         <div class="relative">
-          <img class="w-100 px-4 rounded-xl relative" src="/public/imgs/pic.jpeg" alt="Image" />
-          <h1 class="absolute right-4 top-10 md:top-20 md:right-20 text-blue-800 font-bold text-center">{{ $t('If you see a list of rich people') }} <br>
+          <img class="w-100 px-4 rounded-xl relative cursor-pointer" src="/public/imgs/pic.png" alt="Image" @click="navigateTo('/about')" />
+          <!-- <h1 class="absolute right-4 top-10 md:top-20 md:right-20 text-blue-800 font-bold text-center">{{ $t('If you see a list of rich people') }} <br>
           {{$t('and want to be with them')}} <br>
  {{$t('do the same')}}
-        </h1>
+        </h1> -->
 
         </div>
       </v-carousel-item>
@@ -31,7 +31,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
 
-const carouselHeight = ref(220); // الطول الافتراضي للشاشات الصغيرة
+const carouselHeight = ref(250); // الطول الافتراضي للشاشات الصغيرة
 
 // دالة لتحديث الارتفاع بناءً على حجم الشاشة
 const updateHeight = () => {
@@ -42,7 +42,7 @@ const updateHeight = () => {
   } else if (window.innerWidth >= 510) {
     carouselHeight.value = 400; // الطول للشاشات المتوسطة
   } else {
-    carouselHeight.value = 220; // الطول للشاشات الصغيرة
+    carouselHeight.value = 250; // الطول للشاشات الصغيرة
   }
 };
 

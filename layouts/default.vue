@@ -20,6 +20,11 @@
           to="/login" active-class="bg-violet-500 text-yellow-400" exact-active-class="bg-violet-500 text-yellow-400">
           {{ $t('Login') }}
         </NuxtLink>
+        <NuxtLink v-if="token"
+          class="hover:bg-violet-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
+          to="/my-profile" active-class="bg-violet-500 text-yellow-400" exact-active-class="bg-violet-500 text-yellow-400">
+          {{ $t('My profile') }}
+        </NuxtLink>
         <!-- <NuxtLink
           class="hover:bg-violet-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
           :to="`/yourNurse/${userID}`"  active-class="bg-violet-500 text-yellow-400" exact-active-class="bg-violet-500 text-yellow-400">
@@ -102,10 +107,15 @@
             to="/login" active-class="bg-violet-500 text-yellow-400" exact-active-class="bg-violet-500 text-yellow-400">
             {{ $t('Login') }}
           </NuxtLink>
-          <button v-if="token" @click="logout"
+          <NuxtLink v-if="token"
+          class="hover:bg-violet-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
+          to="/my-profile" active-class="bg-violet-500 text-yellow-400" exact-active-class="bg-violet-500 text-yellow-400">
+          {{ $t('My profile') }}
+        </NuxtLink>
+          <h1 v-if="token" @click="logout"
             class="hover:bg-violet-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400">
             {{ $t('Logout') }}
-          </button>
+          </h1>
 
 
         </div>
@@ -145,7 +155,7 @@ const logout = () => {
   token.value = null;  // إزالة التوكن من useLocalStorage
   localStorage.removeItem('userID');
   localStorage.removeItem('roles');
-  router.push('/login'); // استخدم router.push بدلاً من navigateTo
+  navigateTo('/login'); // استخدم router.push بدلاً من navigateTo
 };
 
 // مراقبة التوكن وتحديث حالة token بناءً عليه

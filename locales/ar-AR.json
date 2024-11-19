@@ -24,5 +24,15 @@
     "A link has been sent to your email to confirm your account":"تم إرسال رابط إلى إيميلك لتأكيد الحساب",
     "Forget password?":"هل نسيت كلمة السر؟",
     "don't have an account?":"ليس ليدك حساب؟",
-    "signup now":"سجل الآن"
+    "signup now":"سجل الآن",
+    "My profile":"حسابي",
+    "Logout":"تسجيل الخروج",
+    "Full Name":"الإسم كامل",
+    "Personal Data":"البيانات الشخصية",
+    "My orders":"طلباتي",
+    "Email":"الإيميل",
+    "Mobile Number":"رقم الموبايل",
+    "WhatsApp Number":"رقم الواتساب",
+    "City":"المدينة",
+    "Birthday":"تاريخ الميلاد"
 }
