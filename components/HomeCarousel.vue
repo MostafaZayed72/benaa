@@ -3,7 +3,7 @@
     <v-carousel :height="carouselHeight" show-arrows="false" cycle hide-delimiter-background>
       <v-carousel-item>
         <div class="relative">
-          <img class="w-100 px-4 rounded-xl"
+          <img class="w-100 px-4 rounded-xl md:h-[400px] mx-auto md:w-[80%]"
             src="/public/imgs/product.png" alt="Image" />
 
           <button class="absolute btn-more bg-violet-700 hover:bg-violet-900 delayed "
@@ -14,7 +14,7 @@
       </v-carousel-item>
       <v-carousel-item>
         <div class="relative">
-          <img class="w-100 px-4 rounded-xl relative cursor-pointer" src="/public/imgs/pic.png" alt="Image" @click="navigateTo('/about')" />
+          <img class="md:w-[80%] px-4 rounded-xl relative cursor-pointer md:h-[400px] mx-auto" src="/public/imgs/pic.png" alt="Image" @click="navigateTo('/about')" />
           <!-- <h1 class="absolute right-4 top-10 md:top-20 md:right-20 text-blue-800 font-bold text-center">{{ $t('If you see a list of rich people') }} <br>
           {{$t('and want to be with them')}} <br>
  {{$t('do the same')}}
@@ -36,11 +36,11 @@ const carouselHeight = ref(250); // الطول الافتراضي للشاشات
 // دالة لتحديث الارتفاع بناءً على حجم الشاشة
 const updateHeight = () => {
   if (window.innerWidth >= 950) {
-    carouselHeight.value = 850; // الطول للشاشات الكبيرة جدًا
+    carouselHeight.value = 450; // الطول للشاشات الكبيرة جدًا
   } else if (window.innerWidth >= 750) {
-    carouselHeight.value = 500; // الطول للشاشات الكبيرة
+    carouselHeight.value = 450; // الطول للشاشات الكبيرة
   } else if (window.innerWidth >= 510) {
-    carouselHeight.value = 400; // الطول للشاشات المتوسطة
+    carouselHeight.value = 450; // الطول للشاشات المتوسطة
   } else {
     carouselHeight.value = 250; // الطول للشاشات الصغيرة
   }
