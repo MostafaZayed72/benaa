@@ -3,25 +3,25 @@
         style="background-image: url('/imgs/cover.png'); background-size: cover; background-attachment: fixed; background-position: center bottom;">
         <div class="max-w-md p-6 bg-violet-700 shadow-md rounded-lg"
             style="background-image: url('/imgs/cover.png'); background-size: cover; background-attachment: fixed; background-position: center bottom;">
-            <h1 class="text-2xl font-bold mb-6 text-center">{{ $t('تسجيل ممرض جديد') }}</h1>
+            <h1 class="text-2xl font-bold mb-6 text-center">{{ $t('Sign up new account') }}</h1>
             <form @submit.prevent="registerNurse" class="space-y-4">
-                <InputText v-model="firstName" :placeholder="$t('الاسم الأول')" required class="w-full bg-white" />
-                <InputText v-model="lastName" :placeholder="$t('اللقب')" required class="w-full bg-white" />
-                <Dropdown v-model="gender" :options="genders" option-label="label" :placeholder="$t('الجنس')" required class="w-full" />
-                <InputText v-model="mobileNo" style="direction: rtl;" :placeholder="$t('رقم الموبايل')" type="tel" required class="w-full bg-white" />
+                <InputText v-model="firstName" :placeholder="$t('First Name')" required class="w-full bg-white" />
+                <InputText v-model="lastName" :placeholder="$t('Last Name')" required class="w-full bg-white" />
+                <Dropdown v-model="gender" :options="genders" option-label="label" :placeholder="$t('Gender')" required class="w-full" />
+                <InputText v-model="mobileNo" style="direction: rtl;" :placeholder="$t('Mobile Number')" type="tel" required class="w-full bg-white" />
                 <!-- <InputText v-model="whatsAppNo" style="direction: rtl;" :placeholder="$t('رقم الواتساب (اختياري)')" type="tel" class="w-full" /> -->
                 
                 <!-- قائمة الدولة مع فلترة بحث باستخدام AutoComplete -->
                 <AutoComplete v-model="selectedCountry" :suggestions="filteredCountries" 
-                 dropdown   @complete="searchCountries" option-label="name" :placeholder="$t('اختر الدولة')" required class="w-full" />
+                 dropdown   @complete="searchCountries" option-label="name" :placeholder="$t('Select Country')" required class="w-full" />
 
                 <!-- قائمة المحافظة مع فلترة بحث باستخدام Dropdown -->
-                <Dropdown v-model="selectedState" :options="filteredStates" option-label="name" :placeholder="$t('اختر المحافظة')" required class="w-full" />
+                <Dropdown v-model="selectedState" :options="filteredStates" option-label="name" :placeholder="$t('Select City')" required class="w-full" />
 
-                <Calendar v-model="birthday" :placeholder="$t('تاريخ الميلاد')" class="w-full" required />
-                <InputText v-model="email" :placeholder="$t('البريد الإلكتروني')" type="email" required class="w-full bg-white" />
-                <InputText v-model="password" :placeholder="$t('كلمة المرور')" type="password" required class="w-full bg-white" />
-                <InputText v-model="confirmPassword" :placeholder="$t('تأكيد كلمة المرور')" type="password" required class="w-full bg-white" />
+                <Calendar v-model="birthday" :placeholder="$t('Birthday')" class="w-full" required />
+                <InputText v-model="email" :placeholder="$t('Email')" type="email" required class="w-full bg-white" />
+                <InputText v-model="password" :placeholder="$t('Password')" type="password" required class="w-full bg-white" />
+                <InputText v-model="confirmPassword" :placeholder="$t('Confirm Password')" type="password" required class="w-full bg-white" />
 
                 <h1 class="w-fit bg-green-300 hover:bg-green-400 delayed text-center text-black py-1 rounded-full mx-auto px-20 font-bold cursor-pointer" @click="registerNurse()">{{ $t('Signup') }}</h1>
             </form>

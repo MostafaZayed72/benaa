@@ -44,5 +44,10 @@
     "First Name":"الإسم الأول",
     "Last Name":"اللقب",
     "Country":"البلد",
-    "Gender":"الجنس"
+    "Gender":"الجنس",
+    "Sign up new account":"تسجيل حساب جديد",
+    "Select Country":"اختر البلد",
+    "Select City":"اختر المدينة",
+    "Password":"كلمة المرور",
+    "Confirm Password":"تأكيد كلمة المرور"
 }
