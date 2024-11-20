@@ -7,18 +7,18 @@
             <form @submit.prevent="registerNurse" class="space-y-4">
                 <InputText v-model="firstName" :placeholder="$t('First Name')" required class="w-full bg-white" />
                 <InputText v-model="lastName" :placeholder="$t('Last Name')" required class="w-full bg-white" />
-                <Dropdown v-model="gender" :options="genders" option-label="label" :placeholder="$t('Gender')" required class="w-full" />
+                <Dropdown v-model="gender" :options="genders" option-label="label" :placeholder="$t('Gender')" required class="w-full bg-white" />
                 <InputText v-model="mobileNo" style="direction: rtl;" :placeholder="$t('Mobile Number')" type="tel" required class="w-full bg-white" />
                 <!-- <InputText v-model="whatsAppNo" style="direction: rtl;" :placeholder="$t('رقم الواتساب (اختياري)')" type="tel" class="w-full" /> -->
                 
                 <!-- قائمة الدولة مع فلترة بحث باستخدام AutoComplete -->
                 <AutoComplete v-model="selectedCountry" :suggestions="filteredCountries" 
-                 dropdown   @complete="searchCountries" option-label="name" :placeholder="$t('Select Country')" required class="w-full" />
+                 dropdown   @complete="searchCountries" option-label="name" :placeholder="$t('Select Country')" required class="w-full bg-white" />
 
                 <!-- قائمة المحافظة مع فلترة بحث باستخدام Dropdown -->
-                <Dropdown v-model="selectedState" :options="filteredStates" option-label="name" :placeholder="$t('Select City')" required class="w-full" />
+                <Dropdown v-model="selectedState" :options="filteredStates" option-label="name" :placeholder="$t('Select City')" required class="w-full bg-white" />
 
-                <Calendar v-model="birthday" :placeholder="$t('Birthday')" class="w-full" required />
+                <Calendar v-model="birthday" :placeholder="$t('Birthday')" class="w-full bg-white" required />
                 <InputText v-model="email" :placeholder="$t('Email')" type="email" required class="w-full bg-white" />
                 <InputText v-model="password" :placeholder="$t('Password')" type="password" required class="w-full bg-white" />
                 <InputText v-model="confirmPassword" :placeholder="$t('Confirm Password')" type="password" required class="w-full bg-white" />
