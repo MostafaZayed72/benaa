@@ -9,7 +9,7 @@
           <div class="flex flex-col md:flex-row md:justify-around items-center p-6 rounded-md md:mx-40 md:w-full">
             <div class="flex flex-col items-center md:flex-row justify-center md:gap-2">
               <img class="w-16 h-16 rounded-full" src="/public/imgs/person.png" alt="">
-              <h3 class="text-xl font-semibold text-violet-900">{{ marketer.name }}</h3>
+              <h3 class="text-xl font-semibold text-violet-900 dark:text-green-300">{{ marketer.name }}</h3>
               
               <!-- عرض النجوم بناءً على المركز -->
               <div class="flex">
@@ -27,8 +27,8 @@
                 </template>
               </div>
             </div>
-            <p class="text-violet-900"><strong>عدد الإحالات: </strong>{{ marketer.clients }}</p>
-            <p class="text-violet-900"><strong>المدينة: </strong>{{ marketer.city }}</p>
+            <p class="text-violet-900 dark:text-green-300"><strong>عدد الإحالات: </strong>{{ marketer.clients }}</p>
+            <p class="text-violet-900 dark:text-green-300"><strong>المدينة: </strong>{{ marketer.city }}</p>
           </div>
         </div>
       </v-carousel-item>
