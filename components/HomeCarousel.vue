@@ -16,12 +16,12 @@
         </h1>
         </div>
       </v-carousel-item>
-      <!-- <v-carousel-item>
+      <v-carousel-item>
         <div class="relative">
           <img class="md:w-[80%] px-4 rounded-xl relative cursor-pointer md:h-[400px] mx-auto" src="/public/imgs/pic.png" alt="Image" @click="navigateTo('/about')" />
          
         </div>
-      </v-carousel-item> -->
+      </v-carousel-item>
 
     </v-carousel>
   </div>
