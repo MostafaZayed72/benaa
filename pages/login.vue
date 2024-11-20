@@ -7,7 +7,7 @@
           <InputText v-model="email" placeholder="البريد الإلكتروني" type="email" required class="w-full bg-white py-1 rounded-xl px-4" />
           <InputText v-model="password" placeholder="كلمة المرور" type="password" required class="w-full bg-white py-1 rounded-xl px-4" />
           <h1 class="w-fit bg-green-300 hover:bg-green-400 delayed text-center text-black py-1 rounded-full mx-auto px-6 font-bold cursor-pointer" @click="loginUser()">{{ $t('Login') }}</h1>
-          <h1 class="text-center text-white text-sm delayed underline cursor-pointer hover:text-blue-400">{{ $t('Forget password?') }}</h1>
+          <h1 class="text-center text-white text-sm delayed underline cursor-pointer hover:text-blue-400" @click="navigateTo('/reset-password')">{{ $t('Forgot password?') }}</h1>
           <h1 class="text-center text-white text-sm">{{ $t("don't have an account?") }} <nuxtLink class="text-blue-300 hover:text-blue-400 delayed underline" to="/signup">{{ $t('Sign up now') }}</nuxtLink></h1>
         </form>
   

@@ -3,22 +3,22 @@
     <v-carousel :height="carouselHeight" show-arrows="false" cycle hide-delimiter-background>
       <v-carousel-item>
         <div class="relative">
-          <img class="w-100 px-4 rounded-xl md:h-[400px] mx-auto md:w-[80%]"
+          <img class="sm:w-100 px-4 rounded-xl md:h-[400px] mx-auto md:w-[70%] "
             src="/public/imgs/product.png" alt="Image" />
 
           <h1 class="absolute  bg-violet-700 hover:bg-violet-900 delayed text-sm rounded-full px-1 bottom-0  md:hidden"
             :class="{ 'left-16 ': $i18n.locale === 'ar-AR', 'right-16 ': $i18n.locale === 'en-US' }">
             {{ $t('More') }}
         </h1>
-          <h1 class="absolute  bg-violet-700 hover:bg-violet-900 delayed text-sm rounded-full px-1 bottom-2 hidden md:block"
-            :class="{ 'left-16 ': $i18n.locale === 'ar-AR', 'right-16 ': $i18n.locale === 'en-US' }">
+          <h1 class="absolute  bg-violet-700 hover:bg-violet-900 delayed text-sm rounded-full px-4 py-1 bottom-2 hidden md:block"
+            :class="{ 'left-64 ': $i18n.locale === 'ar-AR', 'right-64 ': $i18n.locale === 'en-US' }">
             {{ $t('More') }}
         </h1>
         </div>
       </v-carousel-item>
       <v-carousel-item>
         <div class="relative">
-          <img class="md:w-[80%] px-4 rounded-xl relative cursor-pointer md:h-[400px] mx-auto" src="/public/imgs/pic.png" alt="Image" @click="navigateTo('/about')" />
+          <img class="sm:w-100 md:w-[70%] px-4 rounded-xl relative cursor-pointer md:h-[400px] mx-auto" src="/public/imgs/pic.png" alt="Image" @click="navigateTo('/about')" />
          
         </div>
       </v-carousel-item>
