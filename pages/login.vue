@@ -1,6 +1,6 @@
 <template>
     <div class="p-4 md:p-10 flex flex-col justify-center items-center my-auto h-screen"
-      style="background-image: url('/imgs/cover.png');  background-size: cover; background-attachment: fixed;background-position: center bottom;">
+      >
       <div class="max-w-md mx-auto p-6 bg-violet-700 shadow-md rounded-lg my-auto">
         <h1 class="text-2xl font-bold mb-6 text-center text-white">{{ $t('Login') }}</h1>
         <form @submit.prevent="loginUser" class="space-y-4">
