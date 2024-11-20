@@ -35,12 +35,13 @@ const carouselHeight = ref(250); // الطول الافتراضي للشاشات
 
 // دالة لتحديث الارتفاع بناءً على حجم الشاشة
 const updateHeight = () => {
-  if (window.innerWidth >= 950) {
+  if (window.innerWidth >= 580) {
     carouselHeight.value = 450; // الطول للشاشات الكبيرة جدًا
-  } else if (window.innerWidth >= 750) {
-    carouselHeight.value = 450; // الطول للشاشات الكبيرة
-  } else if (window.innerWidth >= 510) {
-    carouselHeight.value = 450; // الطول للشاشات المتوسطة
+  } 
+  else if (window.innerWidth >= 490) {
+    carouselHeight.value = 350; // الطول للشاشات الكبيرة
+  } else if (window.innerWidth >= 410) {
+    carouselHeight.value = 300; // الطول للشاشات المتوسطة
   } else {
     carouselHeight.value = 250; // الطول للشاشات الصغيرة
   }
@@ -88,7 +89,7 @@ onUnmounted(() => {
 }
 
 .v-btn--icon.v-btn--density-default {
-  color: rgb(110, 21, 194) !important;
+  color: rgb(251, 250, 252) !important;
 
 }
 
