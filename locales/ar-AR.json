@@ -15,6 +15,9 @@
     "Customers":"العملاء",
     "Top Marketers":"أعلى المسوقين",
     "Rank":"مركز",
+    "Edit Data":"تعديل البيانات",
+    "Male":"ذكر",
+    "Female":"أنثى",
     "Welcome":"يا هلا",
     "nice to see you in your shop":"نورتنا في محلك",
     "The distinguished marketer":"المسوق المتميز",
@@ -35,5 +38,11 @@
     "Mobile Number":"رقم الموبايل",
     "WhatsApp Number":"رقم الواتساب",
     "City":"المدينة",
-    "Birthday":"تاريخ الميلاد"
+    "Birthday":"تاريخ الميلاد",
+    "Save":"حفظ",
+    "Cancel":"إلغاء",
+    "First Name":"الإسم الأول",
+    "Last Name":"اللقب",
+    "Country":"البلد",
+    "Gender":"الجنس"
 }
