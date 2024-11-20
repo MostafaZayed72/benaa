@@ -1,8 +1,8 @@
 <template>
     <div class="h-screen flex flex-col items-center justify-center"
-        style="background-image: url('/imgs/cover.png'); background-size: cover; background-attachment: fixed; background-position: center bottom;">
-        <div class="max-w-md p-6 bg-violet-700 shadow-md rounded-lg"
-            style="background-image: url('/imgs/cover.png'); background-size: cover; background-attachment: fixed; background-position: center bottom;">
+        >
+        <div class="max-w-md p-6  shadow-md rounded-lg"
+            >
             <h1 class="text-2xl font-bold mb-6 text-center">{{ $t('Sign up new account') }}</h1>
             <form @submit.prevent="registerNurse" class="space-y-4">
                 <InputText v-model="firstName" :placeholder="$t('First Name')" required class="w-full bg-white" />

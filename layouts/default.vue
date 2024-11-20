@@ -1,5 +1,8 @@
 <template>
   <div :class="{ 'dark': isDarkMode }" :style="{ direction: locale === 'ar-AR' ? 'rtl' : 'ltr' }">
+    <img src="/public/22.png" class="fixed top-10  left-[-20px] z-[-1] md:w-[30%]" alt="">
+    <img src="/public/11.png" class="fixed bottom-0  left-[-20px] z-[-1] md:w-[30%]" alt="">
+    <img src="/public/33.png" class="fixed bottom-0  right-[-20px] z-[-1] w-[50%] md:w-[30%]" alt="">
     <div class="mb-0 px-4 bg-violet-700 flex justify-between items-center py-2 shadow-xl sticky top-0 z-10 ">
       <div class="flex items-center gap-4">
         <Icon @click="toggleSidebar" name="iconamoon:menu-burger-horizontal"
@@ -125,6 +128,7 @@
     <Loader v-if="loading" />
     <main class="p-0">
       <slot />
+      
     </main>
   </div>
 </template>
