@@ -28,9 +28,9 @@
 
             <Toast class="pl-16 pl-md-0" style="direction: rtl" />
             <Loader v-if="loading" />
-            <Dialog class="text-start" v-model:visible="isDialogVisible" header="نجاح التسجيل" modal>
+            <Dialog class="text-start" v-model:visible="isDialogVisible" :header="$t('Registered Successfully')" modal>
                 <p>{{ $t('A link has been sent to your email to confirm your account') }}</p>
-                <Button label="موافق" @click="goToHome" />
+                <Button :label="$t('Ok')" @click="goToHome" />
             </Dialog>
         </div>
     </div>

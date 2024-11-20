@@ -5,9 +5,9 @@
       
       <!-- تكرار المسوقين باستخدام v-for -->
       <v-carousel-item v-for="(marketer, index) in marketers" :key="index">
-        <div class="flex flex-col gap-3 md:flex-row justify-center md:justify-around">
-          <div class="flex flex-col md:flex-row md:justify-around items-center p-6 rounded-md md:mx-40 md:w-full">
-            <div class="flex flex-col items-center md:flex-row justify-center md:gap-2">
+        <div class="flex flex-col gap- md:flex-row justify-center md:justify-around">
+          <div class="flex flex-col gap-2 md:flex-row md:justify-around items-center p-6 rounded-md md:mx-40 md:w-full">
+            <div class="flex flex-col gap-1 items-center md:flex-row justify-center md:gap-2">
               <img class="w-16 h-16 rounded-full" src="/public/imgs/person.png" alt="">
               <h3 class="text-xl font-semibold text-violet-900 dark:text-green-300">{{ marketer.name }}</h3>
               

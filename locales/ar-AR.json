@@ -24,11 +24,11 @@
     "If you see a list of rich people":"إذا رأيت قائمة الأثرياء",
     "and want to be with them":"وأردت أن تكون معهم",
     "do the same":"فافعل مثلهم",
-    "Signup":"تسجيل حساب جديد",
+    "Signup":"تسجيل",
     "A link has been sent to your email to confirm your account":"تم إرسال رابط إلى إيميلك لتأكيد الحساب",
     "Forget password?":"هل نسيت كلمة السر؟",
     "don't have an account?":"ليس ليدك حساب؟",
-    "signup now":"سجل الآن",
+    "Sign up now":"سجل الآن",
     "My profile":"حسابي",
     "Logout":"تسجيل الخروج",
     "Full Name":"الإسم كامل",
@@ -49,5 +49,7 @@
     "Select Country":"اختر البلد",
     "Select City":"اختر المدينة",
     "Password":"كلمة المرور",
-    "Confirm Password":"تأكيد كلمة المرور"
+    "Confirm Password":"تأكيد كلمة المرور",
+    "Registered Successfully":"تم التسجيل بنجاح",
+    "Ok":"موافق"
 }

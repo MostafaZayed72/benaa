@@ -6,22 +6,22 @@
           <img class="w-100 px-4 rounded-xl md:h-[400px] mx-auto md:w-[80%]"
             src="/public/imgs/product.png" alt="Image" />
 
-          <button class="absolute btn-more bg-violet-700 hover:bg-violet-900 delayed "
-            :class="{ 'left-10': $i18n.locale === 'ar-AR', 'right-10': $i18n.locale === 'en-US' }">
+          <h1 class="absolute  bg-violet-700 hover:bg-violet-900 delayed text-sm rounded-full px-1 bottom-0  md:hidden"
+            :class="{ 'left-16 ': $i18n.locale === 'ar-AR', 'right-16 ': $i18n.locale === 'en-US' }">
             {{ $t('More') }}
-          </button>
+        </h1>
+          <h1 class="absolute  bg-violet-700 hover:bg-violet-900 delayed text-sm rounded-full px-1 bottom-2 hidden md:block"
+            :class="{ 'left-16 ': $i18n.locale === 'ar-AR', 'right-16 ': $i18n.locale === 'en-US' }">
+            {{ $t('More') }}
+        </h1>
         </div>
       </v-carousel-item>
-      <v-carousel-item>
+      <!-- <v-carousel-item>
         <div class="relative">
           <img class="md:w-[80%] px-4 rounded-xl relative cursor-pointer md:h-[400px] mx-auto" src="/public/imgs/pic.png" alt="Image" @click="navigateTo('/about')" />
-          <!-- <h1 class="absolute right-4 top-10 md:top-20 md:right-20 text-blue-800 font-bold text-center">{{ $t('If you see a list of rich people') }} <br>
-          {{$t('and want to be with them')}} <br>
- {{$t('do the same')}}
-        </h1> -->
-
+         
         </div>
-      </v-carousel-item>
+      </v-carousel-item> -->
 
     </v-carousel>
   </div>
