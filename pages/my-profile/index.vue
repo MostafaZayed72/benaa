@@ -1,6 +1,8 @@
 <template>
     <v-card>
+        
         <v-tabs v-model="tab" align-tabs="center" bg-color="deep-purple-accent-4" stacked>
+            
             <v-tab value="tab-1">
                 <v-icon icon="mdi-phone"></v-icon>
 
@@ -16,10 +18,13 @@
             </v-tabs>
             <v-tabs-window v-model="tab">
                 <v-tabs-window-item :value="'tab-1'">
-                    <ProfileData class="bg-green-lighten-4 h-screen pt-10 " style="background-image: url('/imgs/cover.png');  background-size: cover; background-attachment: fixed;background-position: center bottom;" />
+                    <ProfileData class="bg-green-lighten-4 h-screen pt-10 "  />
+                    <!-- <img src="/public/22.png" class="fixed top-0  left-[-20px] z-1 md:w-[30%]" alt="">
+    <img src="/public/11.png" class="fixed bottom-0  left-[-20px] z-1 md:w-[30%]" alt="">
+    <img src="/public/33.png" class="fixed bottom-0  right-[-20px] z-1 w-[50%] md:w-[30%]" alt=""> -->
                 </v-tabs-window-item>
                 <v-tabs-window-item :value="'tab-2'">
-                    <ProfileData class="bg-green-lighten-4 h-screen pt-10" style="background-image: url('/imgs/cover.png');  background-size: cover; background-attachment: fixed;background-position: center bottom;" />
+                    <ProfileData class="bg-green-lighten-4 h-screen pt-10" />
                 </v-tabs-window-item>
             </v-tabs-window>
     </v-card>
