@@ -32,23 +32,24 @@
             />
           </template>
         </Column>
-        <Column 
-          field="createdAt" 
-          :header="$t('Created At')" 
-          sortable 
-          :body="formatDate"
-        />
+        <Column field="createdAt" :header="$t('Created At')" sortable>
+  <template #body="slotProps">
+    <!-- استخدام دالة formatDate لتنسيق التاريخ -->
+    <span>{{ formatDate(slotProps.data) }}</span>
+  </template>
+</Column>
+
         <Column :header="$t('Actions')">
           <template #body="slotProps">
             <Button 
               icon="pi pi-pencil" 
-              class="p-button-rounded p-button-text text-blue-500" 
+              class="p-button-rounded p-button-text text-blue-darken-1" 
               @click="openEditDialog(slotProps.data)"
             />
             <Button 
               icon="pi pi-trash" 
-              class="p-button-rounded p-button-text text-red-500" 
-              @click="deleteProduct(slotProps.data.id)"
+              class="p-button-rounded p-button-text text-red-darken-1" 
+              @click="confirmDeleteProduct(slotProps.data)"
             />
           </template>
         </Column>
@@ -61,6 +62,8 @@
         modal 
         class="w-1/2"
         :closable="false"
+        :style="$i18n.locale === 'ar-AR' ? 'direction: rtl' : ''"
+
       >
         <form @submit.prevent="saveProduct">
           <div class="field mb-4">
@@ -89,6 +92,30 @@
           </div>
         </form>
       </Dialog>
+  
+      <!-- Dialog for delete confirmation -->
+      <Dialog 
+        v-model:visible="deleteDialogVisible" 
+        :header="$t('Delete Product')" 
+        modal 
+        class="w-1/3"
+        :style="$i18n.locale === 'ar-AR' ? 'direction: rtl' : ''"
+
+      >
+        <p>{{ $t('Are you sure you want to delete this product?') }}</p>
+        <div class="flex justify-end gap-4 mt-4">
+          <Button 
+            :label="$t('Cancel')" 
+            class="p-button-text" 
+            @click="deleteDialogVisible = false" 
+          />
+          <Button 
+            :label="$t('Delete')" 
+            class="p-button-danger" 
+            @click="deleteProductConfirmed" 
+          />
+        </div>
+      </Dialog>
     </div>
   </template>
   
@@ -101,44 +128,47 @@
   import InputText from "primevue/inputtext";
   import InputNumber from "primevue/inputnumber";
   import 'primeicons/primeicons.css';
-
+  
   definePageMeta({
     layout: "admin"
   });
   
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+  
   const products = ref([]);
   const dialogVisible = ref(false);
+  const deleteDialogVisible = ref(false);
   const isEditing = ref(false);
+  const productToDelete = ref(null);
   const newProduct = ref({
     id: null,
     name: "",
     description: "",
     price: 0,
     commission: 0,
-    images: [""]
+    images: [""],
   });
   
-
-  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
-
-  // Fetch products from API
   const fetchProducts = async () => {
-  try {
-    const response = await fetch(`${API_BASE_URL}/Products/GetAllProducts`);
-    const data = await response.json();
-    products.value = data.data;
-  } catch (error) {
-    console.error("Error fetching products:", error);
-  }
-};
-  
-  // Format date
-  const formatDate = (rowData) => {
-    const date = new Date(rowData.createdAt);
-    return date.toISOString().split("T")[0];
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/Products/GetAllProducts`);
+      const data = await response.json();
+      products.value = data.data;
+    } catch (error) {
+      console.error("Error fetching products:", error);
+    }
   };
   
-  // Dialog handlers
+  const formatDate = (rowData) => {
+  const date = new Date(rowData.createdAt);
+  if (isNaN(date)) {
+    return rowData.createdAt; // إذا كانت القيمة غير صالحة، نعرضها كما هي
+  }
+
+  // استخدام toLocaleDateString لعرض التاريخ فقط بدون الوقت
+  return date.toLocaleDateString('en-CA'); // استخدام تنسيق 'en-CA' يعطي تاريخ بصيغة YYYY-MM-DD
+};
+  
   const openAddDialog = () => {
     isEditing.value = false;
     resetNewProduct();
@@ -156,7 +186,6 @@
     resetNewProduct();
   };
   
-  // Reset new product
   const resetNewProduct = () => {
     newProduct.value = {
       id: null,
@@ -164,60 +193,64 @@
       description: "",
       price: 0,
       commission: 0,
-      images: [""]
+      images: [""],
     };
   };
   
-  // Add or edit product
   const saveProduct = async () => {
-  const url = isEditing.value
-    ? `${API_BASE_URL}/Products/UpdateProduct`
-    : `${API_BASE_URL}/Products/CreateProduct`;
-
-  const method = isEditing.value ? "PUT" : "POST";
-
-  try {
-    const response = await fetch(url, {
-      method,
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newProduct.value),
-    });
-
-    if (response.ok) {
-      if (isEditing.value) {
-        // Update existing product
-        const index = products.value.findIndex((p) => p.id === newProduct.value.id);
-        if (index > -1) products.value[index] = { ...newProduct.value };
+    const url = isEditing.value
+      ? `${API_BASE_URL}/api/Products/UpdateProduct`
+      : `${API_BASE_URL}/api/Products/CreateProduct`;
+  
+    const method = isEditing.value ? "PUT" : "POST";
+  
+    try {
+      const response = await fetch(url, {
+        method,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newProduct.value),
+      });
+  
+      if (response.ok) {
+        fetchProducts();
+        closeDialog();
       } else {
-        // Add new product
-        const createdProduct = await response.json();
-        products.value.push(createdProduct);
+        console.error("Failed to save product.");
       }
-      closeDialog();
-    } else {
-      console.error("Failed to save product.");
+    } catch (error) {
+      console.error("Error saving product:", error);
     }
-    fetchProducts();
-  } catch (error) {
-    console.error("Error saving product:", error);
-  }
-};  
-  // Delete product
-  const deleteProduct = async (productId) => {
-  try {
-    const response = await fetch(`${API_BASE_URL}/Products/DeleteProduct/${productId}`, {
-      method: "DELETE",
-    });
-
-    if (response.ok) {
-      products.value = products.value.filter((product) => product.id !== productId);
-    } else {
-      console.error("Failed to delete product.");
+  };
+  
+  const confirmDeleteProduct = (product) => {
+    productToDelete.value = product;
+    deleteDialogVisible.value = true;
+  };
+  
+  const deleteProductConfirmed = async () => {
+    if (!productToDelete.value) return;
+  
+    try {
+      const response = await fetch(
+        `${API_BASE_URL}/api/Products/DeleteProduct/${productToDelete.value.id}`,
+        { method: "DELETE" }
+      );
+  
+      if (response.ok) {
+        products.value = products.value.filter(
+          (product) => product.id !== productToDelete.value.id
+        );
+      } else {
+        console.error("Failed to delete product.");
+      }
+    } catch (error) {
+      console.error("Error deleting product:", error);
+    } finally {
+      deleteDialogVisible.value = false;
+      productToDelete.value = null;
     }
-  } catch (error) {
-    console.error("Error deleting product:", error);
-  }
-};  
+  };
+  
   onMounted(() => {
     fetchProducts();
   });
