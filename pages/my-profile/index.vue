@@ -19,12 +19,10 @@
             <v-tabs-window v-model="tab">
                 <v-tabs-window-item :value="'tab-1'">
                     <ProfileData class="bg-green-lighten-4 h-screen pt-10 "  />
-                    <!-- <img src="/public/22.png" class="fixed top-0  left-[-20px] z-1 md:w-[30%]" alt="">
-    <img src="/public/11.png" class="fixed bottom-0  left-[-20px] z-1 md:w-[30%]" alt="">
-    <img src="/public/33.png" class="fixed bottom-0  right-[-20px] z-1 w-[50%] md:w-[30%]" alt=""> -->
+                   
                 </v-tabs-window-item>
                 <v-tabs-window-item :value="'tab-2'">
-                    <ProfileData class="bg-green-lighten-4 h-screen pt-10" />
+                    <ProfileOrders class="bg-green-lighten-4 h-screen pt-10" />
                 </v-tabs-window-item>
             </v-tabs-window>
     </v-card>

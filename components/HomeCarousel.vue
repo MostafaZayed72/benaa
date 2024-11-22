@@ -18,10 +18,11 @@
       </v-carousel-item>
       <v-carousel-item>
         <div class="relative">
-          <img class="sm:w-100 md:w-[70%] px-4 rounded-xl relative cursor-pointer md:h-[400px] mx-auto" src="/public/imgs/pic.png" alt="Image" @click="navigateTo('/about')" />
+          <img class="sm:w-100 md:w-[70%] px-4 rounded-xl relative cursor-pointer md:h-[400px] mx-auto" src="/public/imgs/pic.png" alt="Image" @click="navigateTo('/article')" />
          
         </div>
       </v-carousel-item>
+     
 
     </v-carousel>
   </div>

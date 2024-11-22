@@ -51,5 +51,8 @@
     "Password":"كلمة المرور",
     "Confirm Password":"تأكيد كلمة المرور",
     "Registered Successfully":"تم التسجيل بنجاح",
-    "Ok":"موافق"
+    "Ok":"موافق",
+    "Add New Product":"إضافة منتج جديد",
+    "Name":"الإسم",
+    "Description":"الوصف"
 }
