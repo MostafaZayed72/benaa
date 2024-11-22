@@ -33,7 +33,7 @@
   
           <div class="flex gap-8 justify-center">
             <h1 class="bg-violet-500 text-white hover:bg-violet-600 delayed px-3 cursor-pointer rounded">{{ $t('Buy Now') }}</h1>
-            <h1 class="bg-green-300 hover:bg-violet-400 delayed px-3 cursor-pointer rounded">{{ $t('Market Now') }}</h1>
+            <h1 class="bg-green-300 hover:bg-green-400 delayed px-3 cursor-pointer rounded">{{ $t('Market Now') }}</h1>
 
           </div>
         </div>
