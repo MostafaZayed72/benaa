@@ -40,7 +40,7 @@
           <div class="flex flex-col p-4">
             <NuxtLink
               class="hover:bg-violet-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
-              to="/products" active-class="bg-violet-500 text-yellow-400" exact-active-class="bg-violet-500 text-yellow-400">
+              to="/admin/products" active-class="bg-violet-500 text-yellow-400" exact-active-class="bg-violet-500 text-yellow-400">
               {{ $t('Products') }}
             </NuxtLink>
            
