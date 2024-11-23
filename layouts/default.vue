@@ -65,6 +65,7 @@
         <LanguageSwitcher />
 
         <DarkModeToggle />
+        <FloatingActions />
       </div>
     </div>
 
