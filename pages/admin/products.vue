@@ -86,9 +86,9 @@
         </div>
 
         <div class="field mb-4">
-          <label class="block font-bold mb-1">{{ $t('Images') }}</label>
-          <input type="file" @change="onFileChange" multiple class="w-full" />
-        </div>
+  <label class="block font-bold mb-1">{{ $t('Images') }}</label>
+  <input type="file" @change="onFileChange" multiple class="w-full" />
+</div>
 
         <div class="field mb-4">
           <label class="block font-bold mb-1">{{ $t('Current Images') }}</label>
@@ -195,7 +195,7 @@ const formatDate = (rowData) => {
 
 const onFileChange = (event) => {
   const files = Array.from(event.target.files);
-  newProduct.value.images = files.map(file => URL.createObjectURL(file)); // تخزين الملفات في مصفوفة الصور
+  newProduct.value.images = files; // تخزين الملفات في مصفوفة الصور
 };
 
 const removeImage = (index) => {
@@ -245,10 +245,8 @@ const saveProduct = async () => {
 
   // إضافة الصور إلى FormData
   newProduct.value.images.forEach((image) => {
-    if (typeof image === 'string') {
+    if (image) {
       formData.append("images", image); // تأكد من أن الصورة ليست فارغة
-    } else {
-      formData.append("images", image); // الصور الجديدة
     }
   });
 
