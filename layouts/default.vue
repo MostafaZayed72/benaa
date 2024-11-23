@@ -3,7 +3,7 @@
     <img src="/public/22.png" class="fixed top-10  left-[-20px] z-[-1] md:w-[30%]" alt="">
     <img src="/public/11.png" class="fixed bottom-0  left-[-20px] z-[-1] md:w-[30%]" alt="">
     <img src="/public/33.png" class="fixed bottom-0  right-[-20px] z-[-1] w-[50%] md:w-[30%]" alt="">
-    <div class="mb-0 px-4 bg-violet-700 flex justify-between items-center py-2 shadow-xl sticky top-0 z-10 ">
+    <div class="mb-0 px-4  flex justify-between items-center py-2 shadow-xl sticky top-0 z-10 " style="background-color: #7733bc;">
       <div class="flex items-center gap-4">
         <Icon @click="toggleSidebar" name="iconamoon:menu-burger-horizontal"
           class="md:hidden text-xl text-white cursor-pointer" />
@@ -70,7 +70,7 @@
 
     <!-- Burger Menu Transition for Small Screens -->
     <transition name="slide">
-      <div v-if="isSidebarOpen" class="bg-violet-700 md:hidden border-t-2 border-violet-600 h-screen fixed z-10">
+      <div v-if="isSidebarOpen" class="md:hidden border-t-2 border-violet-600 h-screen fixed z-10" style="background-color: #7733bc;">
         <div class="flex flex-col p-4">
           <NuxtLink
             class="hover:bg-violet-500 px-4 py-2 rounded-lg delayed cursor-pointer font-bold text-slate-50 hover:text-yellow-400"
