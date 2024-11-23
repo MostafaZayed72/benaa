@@ -170,6 +170,9 @@ const goToHome = () => {
     isDialogVisible.value = false;
     router.push('/');
 };
+definePageMeta({
+  layout: "login"
+})
 
 // إعادة تعيين الحقول
 const resetForm = () => {
