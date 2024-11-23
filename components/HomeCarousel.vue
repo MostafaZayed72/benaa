@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-carousel :height="carouselHeight" show-arrows="false" cycle hide-delimiter-background>
-      <!-- <v-carousel-item>
+      <v-carousel-item>
         <div class="relative">
           <img class="sm:w-100 md:w-[70%] px-4 rounded-xl relative cursor-pointer md:h-[400px] mx-auto" src="/public/imgs/pic.png" alt="Image" @click="navigateTo('/article')" />
          
@@ -13,7 +13,7 @@
           <img v-else class="sm:w-100 md:w-[70%] px-4 rounded-xl relative cursor-pointer md:h-[400px] mx-auto" src="/public/imgs/en.png" alt="Image" @click="navigateTo('/article')" />
          
         </div>
-      </v-carousel-item> -->
+      </v-carousel-item>
      
       <v-carousel-item v-for="(product, index) in products" :key="index">
         <div class="relative">
@@ -54,7 +54,7 @@ const updateHeight = () => {
   } else if (window.innerWidth >= 410) {
     carouselHeight.value = 300; // الطول للشاشات المتوسطة
   } else {
-    carouselHeight.value = 250; // الطول للشاشات الصغيرة
+    carouselHeight.value = 230; // الطول للشاشات الصغيرة
   }
 };
 
