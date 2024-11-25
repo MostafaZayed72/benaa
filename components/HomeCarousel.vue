@@ -15,11 +15,11 @@
         </div>
       </v-carousel-item>
      
-      <!-- <v-carousel-item v-for="(product, index) in products" :key="index">
+      <v-carousel-item v-for="(product, index) in products" :key="index">
         <div class="relative">
           <img class="sm:w-100 px-4 rounded-xl md:h-[400px] mx-auto md:w-[70%] "
                :src="product.imageUrl || '/public/imgs/pic.png'" alt="Product Image"  />
-               <h1 class="absolute  bg-violet-700 hover:bg-violet-900 delayed text-white text-sm rounded-full px-1 bottom-[-15px]  md:hidden cursor-pointer"
+               <h1 class="absolute  bg-violet-700 hover:bg-violet-900 delayed text-white text-sm rounded-full px-1 bottom-0  md:hidden cursor-pointer"
             :class="{ 'left-12 ': $i18n.locale === 'ar-AR', 'right-12 ': $i18n.locale === 'en-US' }" @click="navigateTo(`/product/${product.id}`)">
             {{ $t('More') }}
         </h1>
@@ -32,7 +32,7 @@
             {{ $t('More') }}
         </h1>
         </div>
-      </v-carousel-item> -->
+      </v-carousel-item>
      
     </v-carousel>
   </div>
