@@ -1,12 +1,11 @@
 <template>
-    <div>
-      <h1 class="text-2xl font-bold mb-6 text-center">{{ $t('Edit Product') }}</h1>
+    <div class="mt-16">
   
       <div v-if="loading">
-        <p>{{ $t('Loading...') }}</p>
+        <Loader />
       </div>
   
-      <div v-else-if="product" class="product-details p-4 md:p-10 bg-gray-50 rounded-lg shadow-md">
+      <div v-else-if="product" class="product-details p-4 md:p-10 bg-gray-50 rounded-lg shadow-md mt-20">
         <form @submit.prevent="updateProduct">
           <div class="field mb-4">
             <label class="block font-bold mb-1">{{ $t('Name') }}</label>
@@ -27,15 +26,14 @@
   
           <div class="field mb-4">
             <label class="block font-bold mb-1">{{ $t('Add New Images') }}</label>
-            <input type="file" @change="onFileChange" multiple class="w-full" />
+            <input type="file" @change="onFileChange" multiple class="w-full text-violet-700" />
           </div>
   
           <div class="field mb-4">
             <label class="block font-bold mb-1">{{ $t('Current Images') }}</label>
-            <div class="flex flex-wrap gap-2">
+            <div class="flex flex-wrap gap-2 items-center">
               <div v-for="(image, index) in product.images" :key="index" class="relative group">
                 <img :src="`${API_BASE_URL}/${image.url}`" alt="Product Image" class="w-20 h-20 object-cover rounded-md shadow-md" />
-                <Button icon="pi pi-times" class="absolute top-0 right-0 p-button-danger p-button-sm hidden group-hover:block" @click.prevent="removeImage(index)" />
               </div>
             </div>
           </div>
@@ -146,13 +144,16 @@
   onMounted(() => {
     fetchProduct();
   });
+  definePageMeta({
+    layout: 'admin'
+  })
   </script>
   
   <style scoped>
   .product-details img {
     max-width: 80px;
     max-height: 80px;
-    margin: 0 5px;
+    
   }
   </style>
   
