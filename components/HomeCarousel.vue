@@ -9,8 +9,8 @@
       </v-carousel-item>
       <v-carousel-item>
         <div class="relative">
-          <img v-if="$i18n.locale === 'ar-AR'" class="sm:w-100 md:w-[70%] px-4 rounded-xl relative cursor-pointer md:h-[400px] mx-auto" src="/public/imgs/ar.png" alt="Image" @click="navigateTo('/article')" />
-          <img v-else class="sm:w-100 md:w-[70%] px-4 rounded-xl relative cursor-pointer md:h-[400px] mx-auto" src="/public/imgs/en.png" alt="Image" @click="navigateTo('/article')" />
+          <img v-if="$i18n.locale === 'ar-AR'" class="sm:w-100 md:w-[70%] px-4 rounded-xl relative cursor-pointer md:h-[400px] mx-auto" src="/public/imgs/ar.png" alt="Image"  />
+          <img v-else class="sm:w-100 md:w-[70%] px-4 rounded-xl relative cursor-pointer md:h-[400px] mx-auto" src="/public/imgs/en.png" alt="Image"  />
          
         </div>
       </v-carousel-item>
